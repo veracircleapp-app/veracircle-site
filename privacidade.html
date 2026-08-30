@@ -2,273 +2,769 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Política de Privacidade — VeraCircle</title>
-<meta name="description" content="Política de Privacidade do VeraCircle, aplicativo de coordenação de cuidado familiar.">
+<meta name="description" content="Política de Privacidade do VeraCircle, aplicativo de coordenação de cuidado familiar. Português e English.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+  /* ------------------------------------------------------------------
+     VeraCircle — Política de Privacidade / Privacy Policy
+     Português e English no mesmo arquivo.
+     Sem rastreador, sem análise, sem fonte externa, sem requisição de rede.
+     O único script é o seletor de idioma, e ele só troca visibilidade.
+     Tudo o que a página precisa está neste arquivo.
+     As cores são as mesmas do aplicativo (etapas 16 e 17).
+     Este bloco é IDÊNTICO ao de termos.html, de propósito: as duas
+     páginas legais precisam parecer a mesma coisa.
+     ------------------------------------------------------------------ */
   :root {
-    --bg: #ffffff;
-    --surface: #f5f7fa;
-    --text: #1a1f26;
-    --muted: #5a6572;
-    --brand: #234A76;
-    --accent: #6FAE78;
-    --border: #d7dde5;
-    --warn-bg: #fdf6e3;
-    --warn-border: #d8b44a;
+    --bg:         #F7F3EC;
+    --surface:    #FFFFFF;
+    --surface-alt:#DCE8DE;
+    --border:     #CFC7B7;
+    --text:       #2C3A36;
+    --muted:      #607168;
+    --primary:    #1E5E5A;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0f151b;
-      --surface: #182029;
-      --text: #e8edf2;
-      --muted: #a3aeba;
-      --brand: #7FB3E8;
-      --accent: #8FD09B;
-      --border: #2b3540;
-      --warn-bg: #2a2416;
-      --warn-border: #7a6320;
+      --bg:         #111917;
+      --surface:    #1A2422;
+      --surface-alt:#1F2E2B;
+      --border:     #33403C;
+      --text:       #E8EFEC;
+      --muted:      #A9B8B2;
+      --primary:    #74C2B8;
     }
   }
+
   * { box-sizing: border-box; }
+
+  /* O bloco do idioma escondido sai da tela, da tabulação e do leitor de tela. */
+  [hidden] { display: none !important; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
   body {
     margin: 0;
     background: var(--bg);
     color: var(--text);
-    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-    -webkit-text-size-adjust: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
   }
-  main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
-  header { border-bottom: 2px solid var(--border); padding-bottom: 1.25rem; margin-bottom: 2rem; }
-  .mark { display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem; }
-  .mark svg { flex: none; }
-  .mark span { font-size: 1.25rem; font-weight: 700; color: var(--brand); }
-  h1 { font-size: 1.85rem; line-height: 1.25; margin: 0 0 .5rem; }
-  h2 { font-size: 1.3rem; margin: 2.5rem 0 .75rem; color: var(--brand); }
-  h3 { font-size: 1.05rem; margin: 1.75rem 0 .5rem; }
-  .updated { color: var(--muted); font-size: .95rem; margin: 0; }
-  .lead {
+
+  .pular {
+    position: absolute;
+    left: -9999px;
+    top: 0;
     background: var(--surface);
-    border-left: 4px solid var(--accent);
-    padding: 1rem 1.25rem;
-    border-radius: .5rem;
-    margin: 2rem 0;
+    color: var(--primary);
+    padding: 0.75rem 1rem;
+    border-radius: 0 0 8px 0;
+    z-index: 10;
   }
-  .lead p { margin: 0; }
-  ul { padding-left: 1.35rem; }
-  li { margin: .35rem 0; }
-  a { color: var(--brand); }
-  strong { font-weight: 650; }
-  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .97rem; }
-  th, td { text-align: left; padding: .7rem .6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-  th { color: var(--muted); font-weight: 650; }
-  .scroll { overflow-x: auto; }
-  .note {
-    background: var(--warn-bg);
-    border: 1px solid var(--warn-border);
-    border-radius: .5rem;
-    padding: .9rem 1.1rem;
+  .pular:focus { left: 0; }
+
+  .envolucro {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+  }
+
+  header.topo {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Seletor de idioma — logo no alto, antes do título. */
+  .seletor-idioma {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0 0 1.5rem;
+    font-size: 0.95rem;
+  }
+  .seletor-idioma .rotulo-idioma {
+    color: var(--muted);
+    margin-right: 0.5rem;
+  }
+  .seletor-idioma a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.25rem 0.85rem;
+    border-radius: 999px;
+  }
+  .seletor-idioma a[aria-current="page"] {
+    background: var(--surface-alt);
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .seletor-idioma .separador {
+    color: var(--muted);
+    padding: 0 0.15rem;
+  }
+
+  .aviso-js {
+    background: var(--surface-alt);
+    border-radius: 12px;
+    padding: 0.85rem 1.1rem;
+    margin: 0 0 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .marca {
+    font-family: "New York", Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    color: var(--primary);
+    letter-spacing: 0.01em;
+    margin: 0 0 1.25rem;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+    line-height: 1.25;
+    margin: 0 0 0.75rem;
+    color: var(--text);
+  }
+
+  .versao {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0.25rem 0;
+  }
+
+  /* Identificação do responsável — em destaque, logo no começo. */
+  .responsavel {
+    background: var(--surface-alt);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-top: 1.5rem;
+    font-size: 0.98rem;
+  }
+  .responsavel p { margin: 0.25rem 0; }
+  .responsavel .rotulo {
+    color: var(--muted);
+    font-size: 0.9rem;
+    display: block;
+  }
+  .responsavel .nome { font-weight: 600; }
+
+  h2 {
+    font-size: 1.3rem;
+    line-height: 1.3;
+    margin: 2.75rem 0 0.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  h3 {
+    font-size: 1.08rem;
+    line-height: 1.35;
+    margin: 1.75rem 0 0.5rem;
+    color: var(--text);
+  }
+
+  p { margin: 0 0 1rem; }
+
+  ul { margin: 0 0 1rem; padding-left: 1.35rem; }
+  li { margin-bottom: 0.5rem; }
+
+  strong { font-weight: 600; }
+
+  a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  a:hover { text-decoration-thickness: 2px; }
+
+  /* Foco sempre visível — quem navega por teclado precisa ver onde está. */
+  a:focus-visible, .pular:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .abertura {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.35rem;
+    margin-bottom: 2rem;
+  }
+  .abertura p:last-child { margin-bottom: 0; }
+
+  .destaque {
+    background: var(--surface-alt);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
     margin: 1.25rem 0;
   }
-  .note p { margin: 0; }
-  .language-switch { display:flex; gap:.5rem; justify-content:flex-end; margin-bottom:1.25rem; }
-  .language-switch button { border:1px solid var(--border); background:var(--surface); color:var(--text); border-radius:999px; padding:.45rem .8rem; font:inherit; font-size:.9rem; cursor:pointer; }
-  .language-switch button.active { background:var(--brand); color:#fff; border-color:var(--brand); }
-  .lang-section[hidden], [hidden] { display:none !important; }
-  footer {
-    margin-top: 3.5rem; padding-top: 1.25rem;
+  .destaque p:last-child { margin-bottom: 0; }
+
+  .email {
+    font-weight: 600;
+    word-break: break-word;
+  }
+
+  /* A tabela de visibilidade rola sozinha em tela estreita, em vez de
+     empurrar a página inteira para o lado. */
+  .rolagem { overflow-x: auto; margin: 0 0 1rem; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 22rem;
+    font-size: 0.98rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.7rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th { color: var(--muted); font-weight: 600; }
+
+  footer.rodape {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
     border-top: 1px solid var(--border);
-    color: var(--muted); font-size: .93rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  footer.rodape p { margin: 0.35rem 0; }
+  .assinatura {
+    margin-top: 1.5rem;
+    line-height: 1.5;
+  }
+  .assinatura-marca {
+    font-family: "New York", Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    color: var(--primary);
+    letter-spacing: 0.01em;
+  }
+  .assinatura-frase {
+    font-family: "New York", Georgia, "Times New Roman", serif;
+    font-style: italic;
+    color: var(--primary);
+  }
+
+  @media (max-width: 30rem) {
+    body { font-size: 1rem; }
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.2rem; }
+    .envolucro { padding: 1.5rem 1rem 3rem; }
+  }
+
+  @media print {
+    body { background: #fff; color: #000; }
+    a { color: #000; }
+    .seletor-idioma, .aviso-js { display: none; }
   }
 </style>
 </head>
 <body>
-<main>
-<header>
-<div class="language-switch" aria-label="Language">
-<button type="button" id="btn-pt" class="active" onclick="setLanguage('pt')">Português</button>
-<button type="button" id="btn-en" onclick="setLanguage('en')">English</button>
+
+<!-- ================================================================
+     PORTUGUÊS — versão padrão, visível mesmo sem JavaScript.
+     ================================================================ -->
+<div id="pt" lang="pt-BR">
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="envolucro">
+
+  <header class="topo">
+    <nav class="seletor-idioma" aria-label="Idioma da página">
+      <span class="rotulo-idioma">Idioma</span>
+      <a href="?lang=pt" data-idioma="pt" aria-current="page">Português</a>
+      <span class="separador" aria-hidden="true">|</span>
+      <a href="?lang=en" data-idioma="en" lang="en" hreflang="en">English</a>
+    </nav>
+
+    <noscript>
+      <p class="aviso-js">A versão em inglês depende de JavaScript. Com o JavaScript desativado, esta página continua legível em português.
+      <span lang="en">The English version requires JavaScript. With JavaScript disabled, this page remains readable in Portuguese.</span></p>
+    </noscript>
+
+    <p class="marca">VeraCircle</p>
+    <h1>Política de Privacidade</h1>
+    <p class="versao">Versão 2026-08-30</p>
+    <p class="versao">Última atualização: 30 de agosto de 2026</p>
+
+    <div class="responsavel">
+      <p><span class="rotulo">Responsável pelo VeraCircle (controlador dos dados)</span>
+         <span class="nome">Vanessa Vieira Guimarães</span></p>
+      <p><span class="rotulo">Contato</span>
+         <a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <section class="abertura" aria-labelledby="uma-frase">
+      <h2 id="uma-frase" style="margin:0 0 0.5rem; padding-top:0; border-top:none; font-size:1.15rem;">Antes de tudo: uma explicação em uma frase</h2>
+      <p>O VeraCircle guarda informações sobre o cuidado de uma pessoa para que a família toda possa acompanhar. Essas informações ficam visíveis <strong>apenas para as pessoas do grupo de cuidado</strong> — ninguém mais.</p>
+    </section>
+
+    <h2>1. Quem somos</h2>
+    <p>O VeraCircle é um aplicativo de coordenação de cuidado familiar.</p>
+    <p><strong>Responsável pelo aplicativo (controlador dos dados):</strong> Vanessa Vieira Guimarães<br>
+       <strong>Contato:</strong> <a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
+
+    <h2>2. O que o VeraCircle NÃO é</h2>
+    <p>O VeraCircle <strong>não é um aplicativo médico</strong>. Ele:</p>
+    <ul>
+      <li>não faz diagnóstico;</li>
+      <li>não receita, não indica e não altera medicamentos;</li>
+      <li>não interpreta exames;</li>
+      <li>não determina estágio ou gravidade de doença;</li>
+      <li>não substitui profissional de saúde.</li>
+    </ul>
+    <p>Tudo que aparece no aplicativo foi <strong>escrito pela própria família</strong>. O VeraCircle apenas guarda e organiza o que vocês registram.</p>
+
+    <h2>3. Uma particularidade importante deste aplicativo</h2>
+    <p>Quem usa o VeraCircle é o <strong>cuidador</strong>. Mas boa parte das informações guardadas é sobre <strong>outra pessoa</strong> — a pessoa que recebe o cuidado, e que normalmente não instala o aplicativo.</p>
+    <p>Isso significa que, ao criar um grupo de cuidado e preencher o perfil, você está declarando que:</p>
+    <ul>
+      <li>tem uma relação de cuidado ou representação com essa pessoa;</li>
+      <li>registra essas informações no interesse dela;</li>
+      <li>comunicou a ela o que for possível comunicar, considerando a condição dela.</li>
+    </ul>
+    <p>Se a pessoa cuidada for <strong>menor de 18 anos</strong>, o aplicativo pede, antes de gravar a data de nascimento, uma confirmação explícita de que você é o responsável legal por ela ou tem autorização de quem responde por ela. O que fica guardado dessa confirmação está descrito na seção 4.2.2.</p>
+    <p>Se a pessoa cuidada (ou quem a representa legalmente) quiser saber quais informações estão guardadas, corrigi-las ou apagá-las, escreva para <a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a>. Atendemos esse pedido.</p>
+
+    <h2>4. Que informações o aplicativo guarda</h2>
+
+    <h3>4.1 Sobre você, que usa o aplicativo</h3>
+    <ul>
+      <li>Nome</li>
+      <li>E-mail</li>
+      <li>Senha (guardada de forma criptografada pelo Firebase Authentication — <strong>nós nunca vemos sua senha</strong>)</li>
+      <li>Endereço, se você preencher</li>
+      <li>Idioma escolhido</li>
+    </ul>
+
+    <h3>4.2 Sobre a pessoa cuidada</h3>
+    <p>Guardamos apenas o que a família preenche. Nada é obrigatório:</p>
+    <ul>
+      <li>Nome e nome pelo qual é chamada</li>
+      <li>Data de nascimento, sexo, tipo sanguíneo, peso e altura</li>
+      <li>Condições de saúde informadas pela família</li>
+      <li>Alergias e informações importantes de cuidado</li>
+      <li>Medicamentos, horários e o registro de quem confirmou cada dose</li>
+      <li>Compromissos da agenda e quem ficou responsável</li>
+      <li>Registros do diário de cuidado</li>
+      <li>Contatos de emergência, profissionais de saúde e hospital de referência</li>
+      <li>Preferências, músicas, lugares e histórias de vida</li>
+    </ul>
+
+    <h3>4.2.1 Os lembretes de remédio e a tela de bloqueio</h3>
+    <p>Se você ligar os lembretes de remédio, o aviso que aparece no horário mostra <strong>o nome do remédio</strong>. Ele não mostra a dose, a finalidade, condições de saúde, alergias, o médico, o diário nem a conversa do grupo.</p>
+    <p>Três coisas que vale saber:</p>
+    <ul>
+      <li>Esse aviso pode aparecer na <strong>tela de bloqueio</strong> do iPhone. Quem decide se notificações aparecem com o aparelho bloqueado — e se o conteúdo delas fica visível ou escondido — são os <strong>seus ajustes do iOS</strong>, em Ajustes &gt; Notificações. O VeraCircle respeita o que estiver configurado ali.</li>
+      <li>Se você usa um <strong>Apple Watch</strong>, o iOS pode espelhar esse aviso no relógio, conforme o que estiver configurado nos ajustes de notificação do seu aparelho. O VeraCircle <strong>não tem aplicativo próprio para Apple Watch</strong>: o que aparece ali é o espelhamento do aviso do iPhone, feito pelo próprio iOS.</li>
+      <li>Esses lembretes são <strong>locais</strong>: eles são agendados no próprio iPhone. O VeraCircle <strong>não</strong> tem servidor de notificação, <strong>não</strong> guarda identificador de aparelho e <strong>não</strong> envia nada pela internet para lembrar você.</li>
+    </ul>
+    <p>Se preferir que o nome do remédio não apareça, você pode desligar os lembretes dentro do app, ou esconder o conteúdo das notificações nos ajustes do iPhone.</p>
+
+    <h3>4.2.2 Quando a pessoa cuidada tem menos de 18 anos</h3>
+    <p>A pessoa cuidada pode ter qualquer idade. Quando a data de nascimento informada indica <strong>menos de 18 anos</strong>, o aplicativo pede ao adulto uma confirmação explícita — a declaração descrita na seção 3 — e guarda dela <strong>apenas três informações</strong>:</p>
+    <div class="rolagem">
+      <table>
+        <thead>
+          <tr><th scope="col">O que é guardado</th><th scope="col">Exemplo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A versão do texto que foi mostrado</td><td>2026-08-30</td></tr>
+          <tr><td>O momento em que a confirmação foi feita</td><td>data e hora</td></tr>
+          <tr><td>A conta que fez a confirmação</td><td>o identificador interno da conta</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Para que serve:</strong> poder responder, depois, <em>qual</em> texto foi apresentado, <em>quando</em> e a <em>qual</em> conta — que é a pergunta que se faz quando há informação de saúde de uma criança ou adolescente guardada por um adulto.</p>
+    <p>Esses três campos ficam junto do <strong>perfil da pessoa cuidada</strong>, dentro do grupo de cuidado, e são vistos pelos membros do grupo como o resto do perfil.</p>
+    <p><strong>O que o VeraCircle NÃO faz aqui:</strong> não pede documento de identidade, não pede comprovante de guarda, tutela ou procuração, não guarda foto nem assinatura, e <strong>não verifica</strong> a autoridade declarada. Não guarda endereço IP, identificador de aparelho, localização nem cópia do texto da declaração.</p>
+
+    <h3>4.3 O que o aplicativo NÃO coleta</h3>
+    <ul>
+      <li><strong>Não</strong> coletamos sua localização.</li>
+      <li><strong>Não</strong> usamos rastreadores de publicidade.</li>
+      <li><strong>Não</strong> temos ferramentas de análise de comportamento.</li>
+      <li><strong>Não</strong> acessamos seus contatos, sua agenda, suas fotos ou seu microfone.</li>
+      <li><strong>Não</strong> vendemos e <strong>não</strong> compartilhamos suas informações com terceiros para fins comerciais. Nunca.</li>
+    </ul>
+
+    <h2>5. Para que usamos essas informações</h2>
+    <p>Para uma coisa só: <strong>fazer o aplicativo funcionar para o seu grupo de cuidado.</strong></p>
+    <p>Sem venda de dados, sem publicidade, sem perfilamento, sem treinamento de inteligência artificial com o conteúdo das famílias.</p>
+
+    <h2>6. Quem consegue ver</h2>
+    <div class="rolagem">
+      <table>
+        <thead>
+          <tr><th scope="col">Informação</th><th scope="col">Quem vê</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Perfil da pessoa cuidada, diário, remédios, agenda, rede de apoio e conversa do grupo</td>
+            <td><strong>Somente os membros do grupo de cuidado</strong></td>
+          </tr>
+          <tr>
+            <td>Sua senha</td>
+            <td><strong>Ninguém</strong> — nem nós</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Não existe área pública</h3>
+    <p>O VeraCircle <strong>não tem fórum público</strong> nem nenhuma área onde o que você escreve fique visível para pessoas de fora do seu grupo de cuidado. O diário, a conversa do grupo e a rede de apoio são privados do grupo.</p>
+
+    <h3>Quem entra no grupo</h3>
+    <p>Só entra quem recebe o código de convite de quem criou o grupo. Esse código tem prazo de validade e pode ser trocado a qualquer momento. Quando alguém é removido do grupo, o código é trocado automaticamente e essa pessoa perde o acesso na mesma hora.</p>
+
+    <h2>7. Onde as informações ficam guardadas</h2>
+    <p>Usamos o <strong>Google Firebase</strong> (Google LLC) como infraestrutura: autenticação e banco de dados. O armazenamento de arquivos do Firebase <strong>não é usado</strong> — o aplicativo não envia nem guarda fotos ou anexos. Os servidores ficam fora do Brasil e de Portugal, o que significa que há transferência internacional de dados — autorizada por você ao usar o aplicativo.</p>
+    <p>O Google atua como operador dos dados, seguindo nossas instruções. Política de privacidade do Google: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
+    <p>Também usamos o <strong>Expo</strong> (650 Industries, Inc.) para construir e distribuir o aplicativo. O Expo não recebe o conteúdo dos seus dados de cuidado.</p>
+
+    <h2>8. Segurança</h2>
+    <ul>
+      <li>Toda a comunicação com os servidores é criptografada (HTTPS).</li>
+      <li>O acesso ao banco de dados é controlado por regras que verificam, a cada leitura e a cada gravação, se a pessoa pertence àquele grupo de cuidado.</li>
+      <li>Quem criou o grupo administra quem entra e quem sai, e é quem concede a permissão de editar o plano de cuidado. O perfil da pessoa cuidada, os remédios e a agenda só podem ser alterados por quem criou o grupo ou por quem recebeu dele essa permissão; os demais membros registram o que aconteceu, mas não mudam o que está combinado.</li>
+      <li>Sua senha é guardada criptografada pelo Firebase — nem nós conseguimos vê-la.</li>
+    </ul>
+    <p>Nenhum sistema é perfeito. Se acontecer um incidente que coloque seus dados em risco, avisaremos você e as autoridades competentes.</p>
+
+    <h2>9. Por quanto tempo guardamos</h2>
+    <p>Enquanto sua conta existir. Você pode apagar sua conta a qualquer momento, dentro do aplicativo, em <strong>Configurações → Excluir minha conta</strong>.</p>
+    <p>Ao apagar sua conta:</p>
+    <ul>
+      <li>se você era a <strong>única pessoa</strong> do grupo, todo o conteúdo do grupo é apagado junto — diário, remédios, agenda, rede de apoio e perfil;</li>
+      <li>se havia <strong>outras pessoas</strong> no grupo, você sai do grupo e o conteúdo permanece com elas, porque também é delas.</li>
+    </ul>
+
+    <h2>10. Seus direitos</h2>
+    <p>Pela LGPD (Brasil), pelo RGPD (Europa) e por leis equivalentes, você pode:</p>
+    <ul>
+      <li>saber quais informações guardamos sobre você;</li>
+      <li>corrigir informações erradas;</li>
+      <li>pedir uma cópia;</li>
+      <li>pedir a exclusão;</li>
+      <li>retirar seu consentimento.</li>
+    </ul>
+    <p>Escreva para <a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a>. Respondemos em até 15 dias.</p>
+
+    <h2>11. Idade: quem tem conta e quem recebe o cuidado</h2>
+    <p>São duas coisas diferentes, e vale separar.</p>
+    <p><strong>A conta é de um adulto.</strong> Para criar uma conta no VeraCircle é preciso ter 18 anos ou mais. O aplicativo não é destinado ao uso por menores de idade.</p>
+    <p><strong>A pessoa cuidada pode ter qualquer idade.</strong> O VeraCircle organiza o cuidado de alguém que precisa de cuidado — sem restrição de idade e sem restrição de diagnóstico. A pessoa cuidada <strong>não tem conta</strong> no VeraCircle, não usa o aplicativo e não aparece nele como usuária: ela aparece como as informações que o grupo registra sobre o cuidado dela.</p>
+    <p>Se a pessoa cuidada for <strong>menor de 18 anos</strong>, quem registra as informações precisa ser quem responde legalmente por ela, ou ter autorização de quem responde — e o aplicativo pede essa confirmação de forma explícita antes de gravar a data de nascimento. O que fica guardado dessa confirmação está na seção 4.2.2: a versão do texto, o momento e a conta. Nada além disso.</p>
+
+    <h2>12. Mudanças nesta política</h2>
+    <p>Se algo mudar de forma relevante, avisaremos dentro do aplicativo antes de a mudança valer. A data no topo indica a última atualização.</p>
+
+    <h2>13. Fale conosco</h2>
+    <p><a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
+    <p>Dúvida, correção, exclusão de dados ou reclamação: escreva. Uma pessoa lê.</p>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Política de Privacidade · Versão 2026-08-30</p>
+    <p>Responsável: Vanessa Vieira Guimarães · <a href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
+    <p><a href="termos.html" data-pagina="termos.html">Termos de Uso</a></p>
+    <p class="assinatura"><span class="assinatura-marca">VeraCircle</span><br>
+       <span class="assinatura-frase">Cuidado que aproxima.</span></p>
+  </footer>
+
 </div>
-<div class="mark"><svg width="44" height="44" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#234A76"/><stop offset="100%" stop-color="#6FAE78"/></linearGradient></defs><circle cx="50" cy="50" r="41" fill="none" stroke="url(#g)" stroke-width="7" stroke-linecap="round" stroke-dasharray="228 258" transform="rotate(-104 50 50)"/><path d="M37 36 L50 64 L63 36" fill="none" stroke="#234A76" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>VeraCircle</span></div>
-<div id="header-pt"><h1>Política de Privacidade</h1><p class="updated">Última atualização: 25 de agosto de 2026</p></div>
-<div id="header-en" hidden><h1>Privacy Policy</h1><p class="updated">Last updated: August 25, 2026</p></div>
-</header>
 
-<section id="lang-pt" class="lang-section" lang="pt-BR">
-<div class="lead">
-  <p>O VeraCircle guarda informações sobre o cuidado de uma pessoa idosa para que a família toda possa acompanhar. Essas informações ficam visíveis <strong>apenas para as pessoas do grupo de cuidado</strong> — ninguém mais.</p>
+</div>
+<!-- fim do bloco em português -->
+
+<!-- ================================================================
+     ENGLISH — same legal version 2026-08-30. Hidden until chosen.
+     ================================================================ -->
+<div id="en" lang="en" hidden>
+
+<a class="pular" href="#content">Skip to content</a>
+
+<div class="envolucro">
+
+  <header class="topo">
+    <nav class="seletor-idioma" aria-label="Page language">
+      <span class="rotulo-idioma">Language</span>
+      <a href="?lang=pt" data-idioma="pt" lang="pt-BR" hreflang="pt-BR">Português</a>
+      <span class="separador" aria-hidden="true">|</span>
+      <a href="?lang=en" data-idioma="en" aria-current="page">English</a>
+    </nav>
+
+    <p class="marca">VeraCircle</p>
+    <h1>Privacy Policy</h1>
+    <p class="versao">Version 2026-08-30</p>
+    <p class="versao">Last updated: August 30, 2026</p>
+
+    <div class="responsavel">
+      <p><span class="rotulo">Responsible for VeraCircle (data controller)</span>
+         <span class="nome">Vanessa Vieira Guimarães</span></p>
+      <p><span class="rotulo">Contact</span>
+         <a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
+    </div>
+  </header>
+
+  <main id="content">
+
+    <section class="abertura" aria-labelledby="in-one-sentence">
+      <h2 id="in-one-sentence" style="margin:0 0 0.5rem; padding-top:0; border-top:none; font-size:1.15rem;">First of all: an explanation in one sentence</h2>
+      <p>VeraCircle keeps information about the care of one person so that the whole family can follow along. This information is visible <strong>only to the people in the care group</strong> — no one else.</p>
+    </section>
+
+    <h2>1. Who we are</h2>
+    <p>VeraCircle is a family care coordination app.</p>
+    <p><strong>Responsible for the app (data controller):</strong> Vanessa Vieira Guimarães<br>
+       <strong>Contact:</strong> <a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
+
+    <h2>2. What VeraCircle is NOT</h2>
+    <p>VeraCircle <strong>is not a medical app</strong>. It:</p>
+    <ul>
+      <li>does not diagnose;</li>
+      <li>does not prescribe, recommend or change medications;</li>
+      <li>does not interpret test results;</li>
+      <li>does not determine the stage or severity of an illness;</li>
+      <li>does not replace a health professional.</li>
+    </ul>
+    <p>Everything that appears in the app was <strong>written by the family itself</strong>. VeraCircle only keeps and organizes what you record.</p>
+
+    <h2>3. An important particularity of this app</h2>
+    <p>The person who uses VeraCircle is the <strong>caregiver</strong>. But much of the information kept is about <strong>another person</strong> — the person who receives the care, and who usually does not install the app.</p>
+    <p>This means that, when you create a care group and fill in the profile, you are declaring that:</p>
+    <ul>
+      <li>you have a caregiving or representative relationship with that person;</li>
+      <li>you record this information in their interest;</li>
+      <li>you have told them whatever can be told, considering their condition.</li>
+    </ul>
+    <p>If the person receiving care is <strong>under 18</strong>, the app asks, before saving the date of birth, for an explicit confirmation that you are their legal guardian or that you have authorization from whoever is legally responsible for them. What is kept from that confirmation is described in section 4.2.2.</p>
+    <p>If the person receiving care (or whoever legally represents them) wants to know what information is kept, to correct it or to delete it, write to <a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a>. We honor that request.</p>
+
+    <h2>4. What information the app keeps</h2>
+
+    <h3>4.1 About you, who uses the app</h3>
+    <ul>
+      <li>Name</li>
+      <li>E-mail</li>
+      <li>Password (stored encrypted by Firebase Authentication — <strong>we never see your password</strong>)</li>
+      <li>Address, if you fill it in</li>
+      <li>Chosen language</li>
+    </ul>
+
+    <h3>4.2 About the person receiving care</h3>
+    <p>We keep only what the family fills in. Nothing is required:</p>
+    <ul>
+      <li>Name and the name they are called by</li>
+      <li>Date of birth, sex, blood type, weight and height</li>
+      <li>Health conditions reported by the family</li>
+      <li>Allergies and important care information</li>
+      <li>Medications, times and the record of who confirmed each dose</li>
+      <li>Calendar appointments and who was responsible for them</li>
+      <li>Care journal entries</li>
+      <li>Emergency contacts, health professionals and reference hospital</li>
+      <li>Preferences, music, places and life stories</li>
+    </ul>
+
+    <h3>4.2.1 Medication reminders and the lock screen</h3>
+    <p>If you turn on medication reminders, the alert that appears at the scheduled time shows <strong>the name of the medication</strong>. It does not show the dose, the purpose, health conditions, allergies, the doctor, the journal or the group conversation.</p>
+    <p>Three things worth knowing:</p>
+    <ul>
+      <li>This alert may appear on the iPhone's <strong>lock screen</strong>. Whether notifications appear while the device is locked — and whether their content is visible or hidden — is decided by <strong>your iOS settings</strong>, in Settings &gt; Notifications. VeraCircle respects whatever is configured there.</li>
+      <li>If you use an <strong>Apple Watch</strong>, iOS may mirror this alert on the watch, according to what is configured in your device's notification settings. VeraCircle <strong>has no app of its own for Apple Watch</strong>: what appears there is iOS mirroring the iPhone alert.</li>
+      <li>These reminders are <strong>local</strong>: they are scheduled on the iPhone itself. VeraCircle has <strong>no</strong> notification server, does <strong>not</strong> keep a device identifier and does <strong>not</strong> send anything over the internet to remind you.</li>
+    </ul>
+    <p>If you prefer the medication name not to appear, you can turn the reminders off inside the app, or hide notification content in your iPhone settings.</p>
+
+    <h3>4.2.2 When the person receiving care is under 18</h3>
+    <p>The person receiving care may be of any age. When the date of birth entered indicates <strong>under 18</strong>, the app asks the adult for an explicit confirmation — the declaration described in section 3 — and keeps from it <strong>only three pieces of information</strong>:</p>
+    <div class="rolagem">
+      <table>
+        <thead>
+          <tr><th scope="col">What is kept</th><th scope="col">Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>The version of the text that was shown</td><td>2026-08-30</td></tr>
+          <tr><td>The moment the confirmation was made</td><td>date and time</td></tr>
+          <tr><td>The account that made the confirmation</td><td>the account's internal identifier</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>What it is for:</strong> to be able to answer, later, <em>which</em> text was presented, <em>when</em>, and by <em>which</em> account — which is the question that gets asked when health information about a child or adolescent is kept by an adult.</p>
+    <p>These three fields sit alongside the <strong>profile of the person receiving care</strong>, inside the care group, and are seen by the group's members like the rest of the profile.</p>
+    <p><strong>What VeraCircle does NOT do here:</strong> it does not ask for an identity document, does not ask for proof of custody, guardianship or power of attorney, does not keep a photo or a signature, and <strong>does not verify</strong> the declared authority. It does not keep an IP address, a device identifier, location or a copy of the text of the declaration.</p>
+
+    <h3>4.3 What the app does NOT collect</h3>
+    <ul>
+      <li>We do <strong>not</strong> collect your location.</li>
+      <li>We do <strong>not</strong> use advertising trackers.</li>
+      <li>We do <strong>not</strong> have behavior analytics tools.</li>
+      <li>We do <strong>not</strong> access your contacts, your calendar, your photos or your microphone.</li>
+      <li>We do <strong>not</strong> sell and do <strong>not</strong> share your information with third parties for commercial purposes. Ever.</li>
+    </ul>
+
+    <h2>5. What we use this information for</h2>
+    <p>For one thing only: <strong>to make the app work for your care group.</strong></p>
+    <p>No data selling, no advertising, no profiling, no artificial intelligence training with families' content.</p>
+
+    <h2>6. Who can see it</h2>
+    <div class="rolagem">
+      <table>
+        <thead>
+          <tr><th scope="col">Information</th><th scope="col">Who sees it</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Profile of the person receiving care, journal, medications, calendar, Rede de Apoio (the support network) and group conversation</td>
+            <td><strong>Only the members of the care group</strong></td>
+          </tr>
+          <tr>
+            <td>Your password</td>
+            <td><strong>No one</strong> — not even us</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>There is no public area</h3>
+    <p>VeraCircle <strong>has no public forum</strong> and no area where what you write is visible to people outside your care group. The journal, the group conversation and the support network are private to the group.</p>
+
+    <h3>Who joins the group</h3>
+    <p>Only someone who receives the invitation code from whoever created the group. That code has an expiry date and can be changed at any time. When someone is removed from the group, the code is changed automatically and that person loses access at the same moment.</p>
+
+    <h2>7. Where the information is stored</h2>
+    <p>We use <strong>Google Firebase</strong> (Google LLC) as infrastructure: authentication and database. Firebase file storage <strong>is not used</strong> — the app does not send or keep photos or attachments. The servers are outside Brazil and Portugal, which means there is an international transfer of data — authorized by you when you use the app.</p>
+    <p>Google acts as the data processor, following our instructions. Google's privacy policy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
+    <p>We also use <strong>Expo</strong> (650 Industries, Inc.) to build and distribute the app. Expo does not receive the content of your care data.</p>
+
+    <h2>8. Security</h2>
+    <ul>
+      <li>All communication with the servers is encrypted (HTTPS).</li>
+      <li>Access to the database is controlled by rules that check, on every read and every write, whether the person belongs to that care group.</li>
+      <li>Whoever created the group manages who joins and who leaves, and is the one who grants permission to edit the care plan. The profile of the person receiving care, the medications and the calendar can only be changed by whoever created the group or by whoever received that permission from them; the other members record what happened, but do not change what has been agreed.</li>
+      <li>Your password is stored encrypted by Firebase — not even we can see it.</li>
+    </ul>
+    <p>No system is perfect. If an incident occurs that puts your data at risk, we will notify you and the competent authorities.</p>
+
+    <h2>9. How long we keep it</h2>
+    <p>For as long as your account exists. You can delete your account at any time, inside the app, in <strong>Settings → Delete my account</strong>.</p>
+    <p>When you delete your account:</p>
+    <ul>
+      <li>if you were the <strong>only person</strong> in the group, all of the group's content is deleted with it — journal, medications, calendar, support network and profile;</li>
+      <li>if there were <strong>other people</strong> in the group, you leave the group and the content stays with them, because it is theirs too.</li>
+    </ul>
+
+    <h2>10. Your rights</h2>
+    <p>Under the LGPD (Brazil), the GDPR (Europe) and equivalent laws, you can:</p>
+    <ul>
+      <li>find out what information we keep about you;</li>
+      <li>correct wrong information;</li>
+      <li>ask for a copy;</li>
+      <li>ask for deletion;</li>
+      <li>withdraw your consent.</li>
+    </ul>
+    <p>Write to <a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a>. We respond within 15 days.</p>
+
+    <h2>11. Age: who has an account and who receives the care</h2>
+    <p>These are two different things, and they are worth separating.</p>
+    <p><strong>The account belongs to an adult.</strong> To create an account on VeraCircle you must be 18 or older. The app is not intended for use by minors.</p>
+    <p><strong>The person receiving care may be of any age.</strong> VeraCircle organizes the care of someone who needs care — with no age restriction and no diagnosis restriction. The person receiving care <strong>has no account</strong> on VeraCircle, does not use the app and does not appear in it as a user: they appear as the information the group records about their care.</p>
+    <p>If the person receiving care is <strong>under 18</strong>, whoever records the information must be the person legally responsible for them, or must have authorization from whoever is — and the app asks for that confirmation explicitly before saving the date of birth. What is kept from that confirmation is in section 4.2.2: the version of the text, the moment and the account. Nothing beyond that.</p>
+
+    <h2>12. Changes to this policy</h2>
+    <p>If something changes in a relevant way, we will let you know inside the app before the change takes effect. The date at the top indicates the last update.</p>
+
+    <h2>13. Contact us</h2>
+    <p><a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
+    <p>A question, a correction, data deletion or a complaint: write to us. A person reads it.</p>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Privacy Policy · Version 2026-08-30</p>
+    <p>Responsible: Vanessa Vieira Guimarães · <a href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
+    <p><a href="termos.html?lang=en" data-pagina="termos.html">Terms of Use</a></p>
+    <p class="assinatura"><span class="assinatura-marca">VeraCircle</span><br>
+       <span class="assinatura-frase">Care that brings people closer.</span></p>
+  </footer>
+
 </div>
 
-<h2>1. Quem somos</h2>
-<p>O VeraCircle é um aplicativo de coordenação de cuidado familiar.</p>
-<p><strong>Responsável pelo aplicativo:</strong> Vanessa Guimarães<br>
-<strong>Contato:</strong> <a href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
-
-<h2>2. O que o VeraCircle NÃO é</h2>
-<p>O VeraCircle <strong>não é um aplicativo médico</strong>. Ele:</p>
-<ul>
-  <li>não faz diagnóstico;</li>
-  <li>não receita, não indica e não altera medicamentos;</li>
-  <li>não interpreta exames;</li>
-  <li>não determina estágio ou gravidade de doença;</li>
-  <li>não substitui profissional de saúde.</li>
-</ul>
-<p>Tudo que aparece no aplicativo foi <strong>escrito pela própria família</strong>. O VeraCircle apenas guarda e organiza o que vocês registram.</p>
-
-<h2>3. Uma particularidade importante deste aplicativo</h2>
-<p>Quem usa o VeraCircle é o <strong>cuidador</strong>. Mas boa parte das informações guardadas é sobre <strong>outra pessoa</strong> — o familiar idoso que recebe o cuidado, e que normalmente não instala o aplicativo.</p>
-<p>Isso significa que, ao criar um grupo de cuidado e preencher o perfil, você está declarando que:</p>
-<ul>
-  <li>tem uma relação de cuidado ou representação com essa pessoa;</li>
-  <li>registra essas informações no interesse dela;</li>
-  <li>comunicou a ela o que for possível comunicar, considerando a condição dela.</li>
-</ul>
-<p>Se a pessoa cuidada (ou quem a representa legalmente) quiser saber quais informações estão guardadas, corrigi-las ou apagá-las, escreva para <a href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a>. Atendemos esse pedido.</p>
-
-<h2>4. Que informações o aplicativo guarda</h2>
-
-<h3>4.1 Sobre você, que usa o aplicativo</h3>
-<ul>
-  <li>Nome</li>
-  <li>E-mail</li>
-  <li>Senha — guardada de forma criptografada pelo Firebase Authentication. <strong>Nós nunca vemos sua senha.</strong> Se você entrar com Google ou com Apple, não existe senha nossa: quem confere a identidade é o Google ou a Apple</li>
-  <li>Endereço, se você preencher</li>
-  <li>Idioma escolhido</li>
-  <li>Um apelido, se você publicar na comunidade de cuidadores</li>
-</ul>
-<p>Se você usar <strong>Entrar com a Apple</strong> e escolher esconder seu e-mail, recebemos apenas o endereço anônimo que a Apple gera. Nunca vemos o seu e-mail verdadeiro.</p>
-
-<h3>4.2 Sobre a pessoa cuidada</h3>
-<p>Guardamos apenas o que a família preenche. Nada é obrigatório:</p>
-<ul>
-  <li>Nome e nome pelo qual é chamada</li>
-  <li>Data de nascimento, sexo, tipo sanguíneo, peso e altura</li>
-  <li>Condições de saúde informadas pela família</li>
-  <li>Alergias e informações importantes de cuidado</li>
-  <li>Medicamentos, horários e o registro de quem confirmou cada dose</li>
-  <li>Compromissos da agenda e quem ficou responsável</li>
-  <li>Registros do diário de cuidado</li>
-  <li>Contatos de emergência, profissionais de saúde e hospital de referência</li>
-  <li>Preferências, músicas, lugares e histórias de vida</li>
-</ul>
-
-<h3>4.3 O que o aplicativo NÃO coleta</h3>
-<ul>
-  <li><strong>Não</strong> coletamos sua localização.</li>
-  <li><strong>Não</strong> usamos rastreadores de publicidade.</li>
-  <li><strong>Não</strong> temos ferramentas de análise de comportamento.</li>
-  <li><strong>Não</strong> enviamos fotos: o aplicativo não pede acesso à sua galeria nem à sua câmera, e não guarda imagens.</li>
-  <li><strong>Não</strong> acessamos seus contatos, sua agenda ou seu microfone.</li>
-  <li><strong>Não</strong> vendemos e <strong>não</strong> compartilhamos suas informações com terceiros para fins comerciais. Nunca.</li>
-</ul>
-
-<h2>5. Para que usamos essas informações</h2>
-<p>Para uma coisa só: <strong>fazer o aplicativo funcionar para o seu grupo de cuidado.</strong></p>
-<p>Sem venda de dados, sem publicidade, sem perfilamento, sem treinamento de inteligência artificial com o conteúdo das famílias.</p>
-
-<h2>6. Quem consegue ver</h2>
-<div class="scroll">
-<table>
-  <thead><tr><th>Informação</th><th>Quem vê</th></tr></thead>
-  <tbody>
-    <tr><td>Perfil da pessoa cuidada, diário, remédios, agenda, rede de apoio e conversa</td><td><strong>Somente os membros do grupo de cuidado</strong></td></tr>
-    <tr><td>Publicações na Comunidade de cuidadores</td><td><strong>Qualquer pessoa com conta no VeraCircle</strong></td></tr>
-    <tr><td>Sua senha</td><td><strong>Ninguém</strong> — nem nós</td></tr>
-  </tbody>
-</table>
 </div>
+<!-- end of the English block -->
 
-<h3>Sobre a Comunidade de cuidadores</h3>
-<p>É um fórum <strong>público</strong> entre cuidadores de famílias diferentes. Antes de publicar, o aplicativo avisa sobre isso e pede um apelido, em vez do seu nome completo.</p>
-<div class="note">
-  <p><strong>Nunca escreva ali</strong> o nome completo, a cidade, o endereço ou o telefone da pessoa que você cuida.</p>
-</div>
-
-<h3>Quem entra no grupo</h3>
-<p>Só entra quem recebe o código de convite de quem criou o grupo. Esse código tem prazo de validade e pode ser trocado a qualquer momento. Quando alguém é removido do grupo, o código é trocado automaticamente e essa pessoa perde o acesso na mesma hora.</p>
-
-<h2>7. Onde as informações ficam guardadas</h2>
-<p>Usamos o <strong>Google Firebase</strong> (Google LLC) como infraestrutura: autenticação e banco de dados. Os servidores ficam fora do Brasil e de Portugal, o que significa que há transferência internacional de dados — autorizada por você ao usar o aplicativo.</p>
-<p>O Google atua como operador dos dados, seguindo nossas instruções. Política de privacidade do Google: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
-<p>Também usamos o <strong>Expo</strong> (650 Industries, Inc.) para construir e distribuir o aplicativo. O Expo não recebe o conteúdo dos seus dados de cuidado.</p>
-
-<h2>8. Segurança</h2>
-<ul>
-  <li>Toda a comunicação com os servidores é criptografada (HTTPS).</li>
-  <li>O acesso ao banco de dados é controlado por regras que verificam, a cada leitura e a cada gravação, se a pessoa pertence àquele grupo de cuidado.</li>
-  <li>Somente quem criou o grupo pode alterar o perfil da pessoa cuidada e convidar novas pessoas.</li>
-  <li>Sua senha é guardada criptografada pelo Firebase — nem nós conseguimos vê-la.</li>
-</ul>
-<p>Nenhum sistema é perfeito. Se acontecer um incidente que coloque seus dados em risco, avisaremos você e as autoridades competentes.</p>
-
-<h2>9. Por quanto tempo guardamos</h2>
-<p>Enquanto sua conta existir. Você pode apagar sua conta a qualquer momento, dentro do aplicativo, em <strong>Configurações → Excluir minha conta</strong>.</p>
-<p>Ao apagar sua conta:</p>
-<ul>
-  <li>se você era a <strong>única pessoa</strong> do grupo, todo o conteúdo do grupo é apagado junto — diário, remédios, agenda, rede de apoio e perfil;</li>
-  <li>se havia <strong>outras pessoas</strong> no grupo, você sai do grupo e o conteúdo permanece com elas, porque também é delas.</li>
-</ul>
-
-<h2>10. Seus direitos</h2>
-<p>Pela LGPD (Brasil), pelo RGPD (Europa) e por leis equivalentes, você pode:</p>
-<ul>
-  <li>saber quais informações guardamos sobre você;</li>
-  <li>corrigir informações erradas;</li>
-  <li>pedir uma cópia;</li>
-  <li>pedir a exclusão;</li>
-  <li>retirar seu consentimento.</li>
-</ul>
-<p>Escreva para <a href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a>. Respondemos em até 15 dias.</p>
-
-<h2>11. Crianças</h2>
-<p>O VeraCircle é feito para adultos que cuidam de pessoas idosas. Não é destinado a menores de 18 anos e não coletamos informações de crianças intencionalmente.</p>
-
-<h2>12. Mudanças nesta política</h2>
-<p>Se algo mudar de forma relevante, avisaremos dentro do aplicativo antes de a mudança valer. A data no topo indica a última atualização.</p>
-
-<h2>13. Fale conosco</h2>
-<p><a href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
-<p>Dúvida, correção, exclusão de dados ou reclamação: escreva. Uma pessoa lê.</p>
-
-<footer>
-  <p>VeraCircle — A vida pode mudar. O cuidado permanece.</p>
-</footer>
-
-</section>
-<section id="lang-en" class="lang-section" lang="en" hidden>
-<div class="lead"><p>VeraCircle stores information about the care of an older person so the whole family can stay informed. This information is visible <strong>only to members of the care group</strong> — no one else.</p></div>
-<h2>1. Who we are</h2><p>VeraCircle is a family care coordination app.</p><p><strong>Person responsible for the app:</strong> Vanessa Guimarães<br><strong>Contact:</strong> <a href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
-<h2>2. What VeraCircle is NOT</h2><p>VeraCircle <strong>is not a medical app</strong>. It:</p><ul><li>does not diagnose;</li><li>does not prescribe, recommend, or change medications;</li><li>does not interpret medical tests;</li><li>does not determine the stage or severity of a disease;</li><li>does not replace a healthcare professional.</li></ul><p>Everything shown in the app was <strong>entered by the family itself</strong>. VeraCircle only stores and organizes what you record.</p>
-<h2>3. An important characteristic of this app</h2><p>The person using VeraCircle is the <strong>caregiver</strong>. However, much of the stored information concerns <strong>another person</strong> — the older family member receiving care, who normally does not install the app.</p><p>This means that, when creating a care group and completing the profile, you declare that you:</p><ul><li>have a caregiving or representative relationship with that person;</li><li>record this information in that person's interest;</li><li>have informed that person to the extent reasonably possible, considering their condition.</li></ul><p>If the person receiving care (or their legal representative) wants to know what information is stored, correct it, or have it deleted, contact <a href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a>. We will handle the request.</p>
-<h2>4. Information the app stores</h2><h3>4.1 About you, the app user</h3><ul><li>Name</li><li>Email address</li><li>Password — stored in encrypted form by Firebase Authentication. <strong>We never see your password.</strong> If you sign in with Google or Apple, we do not have a password for you: Google or Apple verifies your identity</li><li>Address, if you provide it</li><li>Selected language</li><li>A nickname, if you post in the caregiver community</li></ul><p>If you use <strong>Sign in with Apple</strong> and choose to hide your email, we receive only the anonymous relay address generated by Apple. We never see your real email address.</p>
-<h3>4.2 About the person receiving care</h3><p>We store only what the family enters. Nothing is mandatory:</p><ul><li>Name and preferred name</li><li>Date of birth, sex, blood type, weight, and height</li><li>Health conditions reported by the family</li><li>Allergies and important care information</li><li>Medications, schedules, and the record of who confirmed each dose</li><li>Calendar appointments and the person responsible</li><li>Care diary entries</li><li>Emergency contacts, healthcare professionals, and reference hospital</li><li>Preferences, music, places, and life stories</li></ul>
-<h3>4.3 What the app does NOT collect</h3><ul><li>We do <strong>not</strong> collect your location.</li><li>We do <strong>not</strong> use advertising trackers.</li><li>We do <strong>not</strong> use behavioral analytics tools.</li><li>We do <strong>not</strong> upload photos: the app does not request access to your photo library or camera and does not store images.</li><li>We do <strong>not</strong> access your contacts, calendar, or microphone.</li><li>We do <strong>not</strong> sell or share your information with third parties for commercial purposes. Never.</li></ul>
-<h2>5. How we use this information</h2><p>For one purpose only: <strong>to make the app work for your care group.</strong></p><p>No sale of data, no advertising, no profiling, and no training of artificial intelligence using families' content.</p>
-<h2>6. Who can see the information</h2><div class="scroll"><table><thead><tr><th>Information</th><th>Who can see it</th></tr></thead><tbody><tr><td>Profile of the person receiving care, diary, medications, calendar, support network, and conversation</td><td><strong>Only members of the care group</strong></td></tr><tr><td>Posts in the caregiver Community</td><td><strong>Anyone with a VeraCircle account</strong></td></tr><tr><td>Your password</td><td><strong>No one</strong> — not even us</td></tr></tbody></table></div>
-<h3>About the caregiver Community</h3><p>It is a <strong>public</strong> forum for caregivers from different families. Before posting, the app warns you about this and asks you to use a nickname instead of your full name.</p><div class="note"><p><strong>Never post there</strong> the full name, city, address, or phone number of the person you care for.</p></div>
-<h3>Who can join the group</h3><p>Only people who receive an invitation code from the person who created the group can join. The code expires and can be changed at any time. When someone is removed from the group, the code is automatically changed and that person immediately loses access.</p>
-<h2>7. Where information is stored</h2><p>We use <strong>Google Firebase</strong> (Google LLC) as infrastructure for authentication and database services. The servers are located outside Brazil and Portugal, which means there is an international transfer of data — authorized by you when you use the app.</p><p>Google acts as a data processor, following our instructions. Google's privacy policy: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p><p>We also use <strong>Expo</strong> (650 Industries, Inc.) to build and distribute the app. Expo does not receive the content of your care data.</p>
-<h2>8. Security</h2><ul><li>All communication with the servers is encrypted (HTTPS).</li><li>Database access is controlled by rules that verify, for every read and write, whether the person belongs to that care group.</li><li>Only the person who created the group can change the profile of the person receiving care and invite new people.</li><li>Your password is stored in encrypted form by Firebase — even we cannot see it.</li></ul><p>No system is perfect. If an incident occurs that puts your data at risk, we will notify you and the competent authorities.</p>
-<h2>9. How long we keep information</h2><p>For as long as your account exists. You can delete your account at any time in the app under <strong>Settings → Delete my account</strong>.</p><p>When you delete your account:</p><ul><li>if you were the <strong>only person</strong> in the group, all group content is deleted as well — diary, medications, calendar, support network, and profile;</li><li>if there were <strong>other people</strong> in the group, you leave the group and the content remains with them because it also belongs to them.</li></ul>
-<h2>10. Your rights</h2><p>Under the LGPD (Brazil), GDPR (Europe), and equivalent laws, you may:</p><ul><li>know what information we store about you;</li><li>correct inaccurate information;</li><li>request a copy;</li><li>request deletion;</li><li>withdraw your consent.</li></ul><p>Contact <a href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a>. We respond within 15 days.</p>
-<h2>11. Children</h2><p>VeraCircle is designed for adults who care for older people. It is not intended for anyone under 18, and we do not intentionally collect information from children.</p>
-<h2>12. Changes to this policy</h2><p>If something changes in a material way, we will notify you in the app before the change takes effect. The date at the top shows the latest update.</p>
-<h2>13. Contact us</h2><p><a href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p><p>Questions, corrections, data deletion requests, or complaints: write to us. A person reads your message.</p>
-<footer><p>VeraCircle — Life may change. Care remains.</p></footer>
-</section>
-</main>
 <script>
-function setLanguage(lang) {
- const pt=lang==='pt';
- document.getElementById('lang-pt').hidden=!pt; document.getElementById('lang-en').hidden=pt;
- document.getElementById('header-pt').hidden=!pt; document.getElementById('header-en').hidden=pt;
- document.getElementById('btn-pt').classList.toggle('active',pt); document.getElementById('btn-en').classList.toggle('active',!pt);
- document.documentElement.lang=pt?'pt-BR':'en';
- document.title=pt?'Política de Privacidade — VeraCircle':'Privacy Policy — VeraCircle';
- try{localStorage.setItem('veracircle-privacy-lang',lang)}catch(e){}
-}
-(function(){let s=null;try{s=localStorage.getItem('veracircle-privacy-lang')}catch(e){}
-if(s==='pt'||s==='en')setLanguage(s);else if((navigator.language||'').toLowerCase().startsWith('en'))setLanguage('en');})();
+/* ------------------------------------------------------------------
+   Seletor de idioma. Só troca visibilidade.
+   Sem análise, sem cookie, sem armazenamento, sem requisição de rede.
+   Sem JavaScript, o bloco em português continua visível.
+   ------------------------------------------------------------------ */
+(function () {
+  var raiz = document.documentElement;
+  var blocoPt = document.getElementById('pt');
+  var blocoEn = document.getElementById('en');
+  if (!blocoPt || !blocoEn) { return; }
+
+  var titulos = {
+    pt: 'Política de Privacidade — VeraCircle',
+    en: 'Privacy Policy — VeraCircle'
+  };
+
+  function idiomaDaUrl() {
+    var achado = /[?&]lang=(pt|en)(?:&|$)/.exec(window.location.search);
+    return achado ? achado[1] : 'pt';
+  }
+
+  function aplicar(idioma) {
+    if (idioma !== 'en') { idioma = 'pt'; }
+    blocoPt.hidden = (idioma !== 'pt');
+    blocoEn.hidden = (idioma !== 'en');
+    raiz.setAttribute('lang', idioma === 'en' ? 'en' : 'pt-BR');
+    document.title = titulos[idioma];
+    var sufixo = (idioma === 'en') ? '?lang=en' : '';
+    var pontes = document.querySelectorAll('a[data-pagina]');
+    for (var i = 0; i < pontes.length; i++) {
+      pontes[i].setAttribute('href', pontes[i].getAttribute('data-pagina') + sufixo);
+    }
+    return idioma;
+  }
+
+  document.addEventListener('click', function (evento) {
+    if (evento.defaultPrevented) { return; }
+    if (evento.metaKey || evento.ctrlKey || evento.shiftKey || evento.altKey) { return; }
+    var alvo = (evento.target && evento.target.closest)
+      ? evento.target.closest('a[data-idioma]')
+      : null;
+    if (!alvo) { return; }
+    evento.preventDefault();
+    var idioma = aplicar(alvo.getAttribute('data-idioma'));
+    try {
+      window.history.replaceState(
+        null, '',
+        idioma === 'en' ? '?lang=en' : window.location.pathname
+      );
+    } catch (erro) { /* endereco nao pode ser reescrito; a pagina ja esta no idioma certo */ }
+    var foco = document.querySelector('#' + idioma + ' a[data-idioma="' + idioma + '"]');
+    if (foco && foco.focus) { foco.focus(); }
+  });
+
+  aplicar(idiomaDaUrl());
+})();
 </script>
+
 </body>
 </html>

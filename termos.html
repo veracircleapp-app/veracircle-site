@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Termos de Uso — VeraCircle</title>
+<meta name="description" content="Termos de Uso do VeraCircle, aplicativo de coordenação de cuidado familiar. Português e English.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  /* ------------------------------------------------------------------
+     VeraCircle — Termos de Uso / Terms of Use
+     Português e English no mesmo arquivo.
+     Sem rastreador, sem análise, sem fonte externa, sem requisição de rede.
+     O único script é o seletor de idioma, e ele só troca visibilidade.
+     Tudo o que a página precisa está neste arquivo.
+     As cores são as mesmas do aplicativo (etapas 16 e 17).
+     ------------------------------------------------------------------ */
+  :root {
+    --bg:         #F7F3EC;
+    --surface:    #FFFFFF;
+    --surface-alt:#DCE8DE;
+    --border:     #CFC7B7;
+    --text:       #2C3A36;
+    --muted:      #607168;
+    --primary:    #1E5E5A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:         #111917;
+      --surface:    #1A2422;
+      --surface-alt:#1F2E2B;
+      --border:     #33403C;
+      --text:       #E8EFEC;
+      --muted:      #A9B8B2;
+      --primary:    #74C2B8;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  /* O bloco do idioma escondido sai da tela, da tabulação e do leitor de tela. */
+  [hidden] { display: none !important; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  .pular {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--surface);
+    color: var(--primary);
+    padding: 0.75rem 1rem;
+    border-radius: 0 0 8px 0;
+    z-index: 10;
+  }
+  .pular:focus { left: 0; }
+
+  .envolucro {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+  }
+
+  header.topo {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Seletor de idioma — logo no alto, antes do título. */
+  .seletor-idioma {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0 0 1.5rem;
+    font-size: 0.95rem;
+  }
+  .seletor-idioma .rotulo-idioma {
+    color: var(--muted);
+    margin-right: 0.5rem;
+  }
+  .seletor-idioma a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.25rem 0.85rem;
+    border-radius: 999px;
+  }
+  .seletor-idioma a[aria-current="page"] {
+    background: var(--surface-alt);
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .seletor-idioma .separador {
+    color: var(--muted);
+    padding: 0 0.15rem;
+  }
+
+  .aviso-js {
+    background: var(--surface-alt);
+    border-radius: 12px;
+    padding: 0.85rem 1.1rem;
+    margin: 0 0 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .marca {
+    font-family: "New York", Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    color: var(--primary);
+    letter-spacing: 0.01em;
+    margin: 0 0 1.25rem;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+    line-height: 1.25;
+    margin: 0 0 0.75rem;
+    color: var(--text);
+  }
+
+  .versao {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0.25rem 0;
+  }
+
+  /* Identificação do responsável — em destaque, logo no começo. */
+  .responsavel {
+    background: var(--surface-alt);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-top: 1.5rem;
+    font-size: 0.98rem;
+  }
+  .responsavel p { margin: 0.25rem 0; }
+  .responsavel .rotulo {
+    color: var(--muted);
+    font-size: 0.9rem;
+    display: block;
+  }
+  .responsavel .nome { font-weight: 600; }
+
+  h2 {
+    font-size: 1.3rem;
+    line-height: 1.3;
+    margin: 2.75rem 0 0.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  h3 {
+    font-size: 1.08rem;
+    line-height: 1.35;
+    margin: 1.75rem 0 0.5rem;
+    color: var(--text);
+  }
+
+  p { margin: 0 0 1rem; }
+
+  ul { margin: 0 0 1rem; padding-left: 1.35rem; }
+  li { margin-bottom: 0.5rem; }
+
+  strong { font-weight: 600; }
+
+  a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  a:hover { text-decoration-thickness: 2px; }
+
+  /* Foco sempre visível — quem navega por teclado precisa ver onde está. */
+  a:focus-visible, .pular:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .abertura {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.35rem;
+    margin-bottom: 2rem;
+  }
+  .abertura p:last-child { margin-bottom: 0; }
+
+  .destaque {
+    background: var(--surface-alt);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .destaque p:last-child { margin-bottom: 0; }
+
+  .email {
+    font-weight: 600;
+    word-break: break-word;
+  }
+
+  footer.rodape {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  footer.rodape p { margin: 0.35rem 0; }
+  .assinatura {
+    margin-top: 1.5rem;
+    line-height: 1.5;
+  }
+  .assinatura-marca {
+    font-family: "New York", Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    color: var(--primary);
+    letter-spacing: 0.01em;
+  }
+  .assinatura-frase {
+    font-family: "New York", Georgia, "Times New Roman", serif;
+    font-style: italic;
+    color: var(--primary);
+  }
+
+  @media (max-width: 30rem) {
+    body { font-size: 1rem; }
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.2rem; }
+    .envolucro { padding: 1.5rem 1rem 3rem; }
+  }
+
+  @media print {
+    body { background: #fff; color: #000; }
+    a { color: #000; }
+    .seletor-idioma, .aviso-js { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================================================================
+     PORTUGUÊS — versão padrão, visível mesmo sem JavaScript.
+     ================================================================ -->
+<div id="pt" lang="pt-BR">
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="envolucro">
+
+  <header class="topo">
+    <nav class="seletor-idioma" aria-label="Idioma da página">
+      <span class="rotulo-idioma">Idioma</span>
+      <a href="?lang=pt" data-idioma="pt" aria-current="page">Português</a>
+      <span class="separador" aria-hidden="true">|</span>
+      <a href="?lang=en" data-idioma="en" lang="en" hreflang="en">English</a>
+    </nav>
+
+    <noscript>
+      <p class="aviso-js">A versão em inglês depende de JavaScript. Com o JavaScript desativado, esta página continua legível em português.
+      <span lang="en">The English version requires JavaScript. With JavaScript disabled, this page remains readable in Portuguese.</span></p>
+    </noscript>
+
+    <p class="marca">VeraCircle</p>
+    <h1>Termos de Uso</h1>
+    <p class="versao">Versão 2026-08-30</p>
+
+    <div class="responsavel">
+      <p><span class="rotulo">Responsável pelo VeraCircle</span>
+         <span class="nome">Vanessa Vieira Guimarães</span></p>
+      <p><span class="rotulo">Contato</span>
+         <a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <section class="abertura" aria-labelledby="uma-frase">
+      <h2 id="uma-frase" style="margin:0 0 0.5rem; padding-top:0; border-top:none; font-size:1.15rem;">Antes de tudo: uma explicação em uma frase</h2>
+      <p>O VeraCircle é um aplicativo para <strong>organizar o cuidado de uma pessoa entre várias pessoas</strong>. Ele guarda o que a sua família anota e ajuda todo mundo a saber o que já foi feito e o que falta. Ele <strong>não</strong> é um serviço de saúde, <strong>não</strong> dá diagnóstico e <strong>não</strong> substitui nenhum profissional.</p>
+      <p>Estes Termos explicam o que você pode esperar do aplicativo e o que o aplicativo espera de você. Leia com calma — está escrito para ser entendido, não para ser difícil.</p>
+    </section>
+
+    <h2>1. O que é o VeraCircle</h2>
+    <p>O VeraCircle é um aplicativo de <strong>coordenação de cuidado</strong>. Ele serve para um grupo de pessoas — família, amigos, cuidadoras, profissionais — organizar junto o dia a dia de alguém que precisa de cuidado.</p>
+    <p>Dentro dele é possível registrar remédios e horários, marcar compromissos, escrever observações num diário, conversar com o grupo, guardar informações de emergência e gerar um resumo do período.</p>
+    <p><strong>Tudo o que o aplicativo mostra é aquilo que as pessoas do grupo escreveram nele.</strong> O VeraCircle não sabe nada por conta própria.</p>
+
+    <h2>2. O que o VeraCircle NÃO é</h2>
+    <p>Esta seção é a mais importante de todo o documento.</p>
+    <p>O VeraCircle <strong>não</strong>:</p>
+    <ul>
+      <li>faz diagnóstico de nenhuma doença ou condição;</li>
+      <li>avalia estágio, gravidade ou evolução de nenhum quadro;</li>
+      <li>indica, altera, suspende ou recomenda medicamentos ou doses;</li>
+      <li>analisa interação entre medicamentos;</li>
+      <li>interpreta exames, sintomas ou sinais;</li>
+      <li>toma decisões de saúde por você;</li>
+      <li>substitui médico, enfermeiro, farmacêutico, cuidador profissional ou qualquer outro profissional de saúde;</li>
+      <li>substitui serviços de emergência.</li>
+    </ul>
+    <div class="destaque">
+      <p><strong>Em caso de emergência, ligue para o serviço de emergência da sua região.</strong> A tela de Emergência do aplicativo apenas mostra informações que a sua família guardou ali — ela <strong>não chama socorro</strong> e não aciona ninguém.</p>
+    </div>
+    <p>Sempre que houver dúvida sobre sintomas, remédios ou mudanças no quadro da pessoa cuidada, procure um profissional de saúde.</p>
+
+    <h2>3. Quem pode usar</h2>
+    <p>Para criar uma conta você precisa ter <strong>18 anos ou mais</strong> e capacidade legal para aceitar estes Termos.</p>
+    <p>Você é responsável por:</p>
+    <ul>
+      <li>manter a sua senha em segurança e não compartilhá-la;</li>
+      <li>tudo o que for feito a partir da sua conta;</li>
+      <li>avisar-nos se achar que alguém entrou na sua conta sem autorização.</li>
+    </ul>
+    <p><strong>O aplicativo não é destinado ao uso por menores de idade</strong> — e isso vale para quem tem CONTA. A <strong>pessoa cuidada</strong> pode ter qualquer idade, inclusive criança ou adolescente: ela não cria conta, não usa o aplicativo e não aparece nele como usuária. Ver a seção 5.</p>
+
+    <h2>4. Grupos de cuidado e quem você convida</h2>
+    <p>O VeraCircle funciona em torno de um <strong>grupo de cuidado</strong>. Quem cria o grupo convida as outras pessoas por meio de um código.</p>
+    <p><strong>Convidar alguém é dar acesso a informações de saúde da pessoa cuidada.</strong> Antes de compartilhar um código de convite, tenha certeza de que aquela pessoa deve mesmo ter esse acesso.</p>
+    <p>Sobre os grupos:</p>
+    <ul>
+      <li>quem cria o grupo administra quem entra, quem sai e quem pode editar o plano de cuidado;</li>
+      <li>qualquer membro do grupo vê as informações registradas nele;</li>
+      <li>quem sai do grupo perde o acesso imediatamente;</li>
+      <li>o código de convite pode ser trocado a qualquer momento por quem criou o grupo — o código antigo deixa de funcionar.</li>
+    </ul>
+    <p><strong>Você é responsável por quem convida.</strong> O VeraCircle não tem como saber se a pessoa convidada deveria ou não ter acesso.</p>
+
+    <h2>5. A pessoa cuidada</h2>
+    <p>Muitas vezes as informações guardadas no aplicativo são de <strong>outra pessoa</strong> — alguém que talvez não tenha criado a conta e talvez não consiga consentir sozinha.</p>
+    <p>Ao registrar informações sobre a pessoa cuidada, você declara que:</p>
+    <ul>
+      <li>tem legitimidade para fazer isso, como familiar, responsável, representante legal ou profissional autorizado;</li>
+      <li>respeita a vontade e a dignidade dessa pessoa;</li>
+      <li>compartilha essas informações apenas com quem realmente precisa delas.</li>
+    </ul>
+    <p>Trate as informações de outra pessoa como gostaria que tratassem as suas.</p>
+
+    <h3>Quando a pessoa cuidada tem menos de 18 anos</h3>
+    <p>Se a data de nascimento informada indicar que a pessoa cuidada é <strong>menor de 18 anos</strong>, o aplicativo pede uma confirmação explícita antes de gravar: você declara que <strong>é o responsável legal por ela, ou que tem autorização do responsável legal</strong>, para registrar e compartilhar estas informações de cuidado com as pessoas deste grupo.</p>
+    <p>Dessa confirmação, o VeraCircle guarda <strong>apenas três coisas</strong>: qual versão do texto foi mostrada, quando ela foi feita, e qual conta a fez.</p>
+    <p>O VeraCircle <strong>não pede e não guarda</strong> documento de identidade, comprovante de guarda, tutela, procuração ou qualquer outro papel — e <strong>não verifica</strong> a autoridade declarada. A responsabilidade pelo que é declarado é de quem declara.</p>
+
+    <h2>6. As informações que você registra</h2>
+    <p>Você é responsável pelo que escreve no aplicativo.</p>
+    <p>O VeraCircle <strong>não confere, não valida, não corrige e não completa</strong> o que foi digitado. Se um horário foi anotado errado, o aplicativo mostrará o horário errado. Se o nome de um remédio foi digitado errado, ele aparecerá errado.</p>
+    <p>Isso vale especialmente para <strong>remédios, doses, horários, alergias, tipo sanguíneo e contatos de emergência</strong>. Confira o que foi cadastrado.</p>
+
+    <h2>7. Remédios, lembretes e agenda são ferramentas de organização</h2>
+    <p>Esta seção também é importante.</p>
+    <p>Os recursos de remédios, lembretes, agenda e estoque do VeraCircle são <strong>ferramentas de organização</strong> — como um caderno compartilhado. Eles <strong>não</strong> garantem que um remédio será tomado, nem que será tomado na hora certa.</p>
+    <p>Sobre os lembretes, especificamente:</p>
+    <ul>
+      <li>eles são <strong>notificações locais do seu iPhone</strong>, agendadas pelo próprio aparelho;</li>
+      <li>eles <strong>podem falhar, atrasar ou não aparecer</strong> — por exemplo se as notificações estiverem desligadas, se o Foco/Não Perturbe estiver ativo, se o aparelho estiver desligado ou sem bateria, ou por qualquer limitação do sistema operacional;</li>
+      <li>o aplicativo <strong>não sabe</strong> se o lembrete foi visto, e não tem como garantir a entrega.</li>
+    </ul>
+    <div class="destaque">
+      <p><strong>Não confie apenas no aplicativo para uma medicação crítica.</strong> Um lembrete que não chega é uma possibilidade real, e o VeraCircle não pode assumir a responsabilidade por isso.</p>
+    </div>
+    <p>O controle de estoque desconta a quantidade a cada registro feito no aplicativo. Ele reflete o que foi registrado — não o que está fisicamente na caixa.</p>
+
+    <h2>8. Conteúdo compartilhado dentro do grupo</h2>
+    <p>O <strong>diário</strong>, a <strong>conversa do grupo</strong> e o <strong>registro da rede de apoio</strong> são vistos por <strong>todas as pessoas do grupo de cuidado</strong> — e por mais ninguém.</p>
+    <p>O VeraCircle <strong>não tem fórum público</strong> nem nenhuma área aberta a pessoas de fora do seu grupo de cuidado. Nada do que você escreve no aplicativo fica visível para quem não está no seu grupo.</p>
+    <p>Vale lembrar que um grupo de cuidado é feito de pessoas: o que for escrito ali pode ser lido por qualquer uma delas — inclusive por quem entrar depois. Escreva pensando nisso.</p>
+    <p>Você continua sendo dono do que escreve. Ao registrar algo no aplicativo, você nos dá apenas a autorização necessária para armazenar e exibir esse conteúdo dentro do aplicativo, para você e para quem tem acesso legítimo a ele.</p>
+
+    <h2>9. Uso aceitável</h2>
+    <p>Ao usar o VeraCircle, você concorda em <strong>não</strong>:</p>
+    <ul>
+      <li>usar o aplicativo para qualquer finalidade ilegal;</li>
+      <li>acessar a conta ou o grupo de outra pessoa sem autorização;</li>
+      <li>tentar burlar as proteções do aplicativo ou acessar dados de outras famílias;</li>
+      <li>publicar conteúdo ofensivo, discriminatório, ameaçador ou que exponha terceiros;</li>
+      <li>usar o aplicativo para vender produtos, prometer tratamentos ou dar orientação médica;</li>
+      <li>sobrecarregar, automatizar ou fazer engenharia reversa do serviço.</li>
+    </ul>
+    <p>Podemos suspender ou encerrar contas que violem estas regras.</p>
+
+    <h2>10. Assinaturas e pagamentos</h2>
+    <p><strong>Hoje o VeraCircle não cobra nada, e não há nenhuma assinatura ativa.</strong> A seção abaixo descreve como as assinaturas funcionarão caso venham a existir.</p>
+    <p>Quando houver recursos pagos:</p>
+    <ul>
+      <li>as assinaturas serão vendidas e cobradas <strong>pela Apple</strong>, através da sua conta do App Store — o VeraCircle não recebe nem armazena dados do seu cartão;</li>
+      <li>o preço, a duração e o que está incluído em cada plano serão exibidos dentro do aplicativo <strong>antes</strong> da confirmação da compra;</li>
+      <li>a <strong>renovação, o cancelamento e os reembolsos</strong> seguem as regras da Apple e são gerenciados por você em Ajustes &gt; Apple ID &gt; Assinaturas, no seu iPhone;</li>
+      <li>cancelar uma assinatura interrompe as cobranças futuras; o acesso pago continua até o fim do período já pago.</li>
+    </ul>
+    <p><strong>Não prometemos aqui nenhum preço, período gratuito ou política de reembolso</strong> que ainda não esteja configurado na App Store.</p>
+
+    <h2>11. Disponibilidade e mudanças no serviço</h2>
+    <p>Fazemos o possível para manter o VeraCircle funcionando, mas <strong>não garantimos que ele estará disponível o tempo todo</strong>. Pode haver interrupções por manutenção, falha de internet, problemas em serviços de terceiros (como a infraestrutura do Google Firebase) ou motivos fora do nosso controle.</p>
+    <p>Podemos mudar, acrescentar ou remover funcionalidades ao longo do tempo. Se alguma mudança for significativa e afetar o que você já usa, avisaremos dentro do aplicativo.</p>
+
+    <h2>12. Encerrar a sua conta</h2>
+    <p>Você pode apagar a sua conta a qualquer momento, dentro do aplicativo, em Ajustes.</p>
+    <p>O que acontece ao apagar:</p>
+    <ul>
+      <li>se você for a <strong>única pessoa</strong> do grupo de cuidado, todo o conteúdo do grupo é apagado junto;</li>
+      <li>se <strong>houver outras pessoas</strong> no grupo, os dados são delas também: você sai do grupo e a sua conta é apagada, mas o grupo continua;</li>
+      <li>a exclusão é <strong>definitiva</strong> e não há como desfazer.</li>
+    </ul>
+    <p>Os detalhes de quais informações são apagadas estão na <a href="privacidade.html" data-pagina="privacidade.html">Política de Privacidade</a>.</p>
+
+    <h2>13. Propriedade intelectual</h2>
+    <p>O nome VeraCircle, a marca, o desenho do aplicativo, os textos educativos e o software são nossos. Você recebe apenas o direito de usar o aplicativo, de forma pessoal e não exclusiva, enquanto respeitar estes Termos.</p>
+    <p>O que <strong>você</strong> escreve continua sendo seu, como descrito na seção 8.</p>
+
+    <h2>14. Limitação de responsabilidade</h2>
+    <p>O VeraCircle é oferecido <strong>como está</strong>. Fazemos o nosso melhor, com cuidado real, mas não podemos prometer que ele será perfeito, ininterrupto ou livre de erros.</p>
+    <p>Dentro do que a lei permite, <strong>não somos responsáveis</strong> por:</p>
+    <ul>
+      <li>decisões de saúde tomadas com base no que está registrado no aplicativo;</li>
+      <li>lembretes que não chegaram, atrasaram ou foram ignorados;</li>
+      <li>informações incorretas, incompletas ou desatualizadas registradas pelos usuários;</li>
+      <li>o que outras pessoas do seu grupo de cuidado fazem com as informações;</li>
+      <li>indisponibilidade do serviço ou de serviços de terceiros.</li>
+    </ul>
+    <p><strong>Nada nestes Termos afasta os direitos que a lei garante a você como consumidor</strong>, inclusive os do Código de Defesa do Consumidor.</p>
+
+    <h2>15. Privacidade</h2>
+    <p>O tratamento das suas informações está descrito na <a href="privacidade.html" data-pagina="privacidade.html">Política de Privacidade</a>, que faz parte destes Termos.</p>
+    <p>Ela explica o que é guardado, por quê, quem consegue ver, onde fica armazenado e como apagar tudo.</p>
+
+    <h2>16. Mudanças nestes Termos</h2>
+    <p>Se estes Termos mudarem, publicaremos a nova versão com uma nova data no topo. Se a mudança for significativa, avisaremos dentro do aplicativo e pediremos que você aceite a versão nova.</p>
+    <p>O aplicativo guarda <strong>qual versão você aceitou e quando</strong> — só isso, sem nenhum outro rastro.</p>
+
+    <h2>17. Lei aplicável e foro</h2>
+    <p>Estes Termos são regidos pelas <strong>leis brasileiras</strong>.</p>
+    <p>Se houver algum conflito, ele será resolvido no foro do seu domicílio, como garante o Código de Defesa do Consumidor.</p>
+
+    <h2>18. Fale conosco</h2>
+    <p>O VeraCircle é oferecido por <strong>Vanessa Vieira Guimarães</strong>.</p>
+    <p>Dúvidas sobre estes Termos, sobre a sua conta ou sobre as suas informações:</p>
+    <p><a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
+    <p>Uma pessoa lê.</p>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Termos de Uso · Versão 2026-08-30</p>
+    <p>Responsável: Vanessa Vieira Guimarães · <a href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
+    <p><a href="privacidade.html" data-pagina="privacidade.html">Política de Privacidade</a></p>
+    <p class="assinatura"><span class="assinatura-marca">VeraCircle</span><br>
+       <span class="assinatura-frase">Cuidado que aproxima.</span></p>
+  </footer>
+
+</div>
+
+</div>
+<!-- fim do bloco em português -->
+
+<!-- ================================================================
+     ENGLISH — same legal version 2026-08-30. Hidden until chosen.
+     ================================================================ -->
+<div id="en" lang="en" hidden>
+
+<a class="pular" href="#content">Skip to content</a>
+
+<div class="envolucro">
+
+  <header class="topo">
+    <nav class="seletor-idioma" aria-label="Page language">
+      <span class="rotulo-idioma">Language</span>
+      <a href="?lang=pt" data-idioma="pt" lang="pt-BR" hreflang="pt-BR">Português</a>
+      <span class="separador" aria-hidden="true">|</span>
+      <a href="?lang=en" data-idioma="en" aria-current="page">English</a>
+    </nav>
+
+    <p class="marca">VeraCircle</p>
+    <h1>Terms of Use</h1>
+    <p class="versao">Version 2026-08-30</p>
+
+    <div class="responsavel">
+      <p><span class="rotulo">Responsible for VeraCircle</span>
+         <span class="nome">Vanessa Vieira Guimarães</span></p>
+      <p><span class="rotulo">Contact</span>
+         <a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
+    </div>
+  </header>
+
+  <main id="content">
+
+    <section class="abertura" aria-labelledby="in-one-sentence">
+      <h2 id="in-one-sentence" style="margin:0 0 0.5rem; padding-top:0; border-top:none; font-size:1.15rem;">First of all: an explanation in one sentence</h2>
+      <p>VeraCircle is an app for <strong>organizing the care of one person among several people</strong>. It keeps what your family writes down and helps everyone know what has already been done and what is still missing. It is <strong>not</strong> a health service, it does <strong>not</strong> give a diagnosis and it does <strong>not</strong> replace any professional.</p>
+      <p>These Terms explain what you can expect from the app and what the app expects from you. Take your time — this is written to be understood, not to be difficult.</p>
+    </section>
+
+    <h2>1. What VeraCircle is</h2>
+    <p>VeraCircle is a <strong>care coordination</strong> app. It is there so that a group of people — family, friends, caregivers, professionals — can organize together the day-to-day care of someone who needs it.</p>
+    <p>Inside it you can record medications and times, schedule appointments, write notes in a journal, talk with the group, keep emergency information and generate a summary of a period.</p>
+    <p><strong>Everything the app shows is what the people in the group wrote into it.</strong> VeraCircle knows nothing on its own.</p>
+
+    <h2>2. What VeraCircle is NOT</h2>
+    <p>This is the most important section in the whole document.</p>
+    <p>VeraCircle does <strong>not</strong>:</p>
+    <ul>
+      <li>diagnose any illness or condition;</li>
+      <li>assess the stage, severity or progression of any condition;</li>
+      <li>prescribe, change, suspend or recommend medications or doses;</li>
+      <li>analyze interactions between medications;</li>
+      <li>interpret test results, symptoms or signs;</li>
+      <li>make health decisions for you;</li>
+      <li>replace a doctor, nurse, pharmacist, professional caregiver or any other health professional;</li>
+      <li>replace emergency services.</li>
+    </ul>
+    <div class="destaque">
+      <p><strong>In an emergency, call the emergency service in your area.</strong> The app's Emergency screen only shows information your family saved there — it <strong>does not call for help</strong> and does not alert anyone.</p>
+    </div>
+    <p>Whenever there is any doubt about symptoms, medications or changes in the condition of the person receiving care, consult a health professional.</p>
+
+    <h2>3. Who can use it</h2>
+    <p>To create an account you must be <strong>18 or older</strong> and legally able to accept these Terms.</p>
+    <p>You are responsible for:</p>
+    <ul>
+      <li>keeping your password safe and not sharing it;</li>
+      <li>everything done from your account;</li>
+      <li>telling us if you believe someone has accessed your account without authorization.</li>
+    </ul>
+    <p><strong>The app is not intended for use by minors</strong> — and that applies to whoever has an ACCOUNT. The <strong>person receiving care</strong> may be of any age, including a child or an adolescent: they do not create an account, do not use the app and do not appear in it as a user. See section 5.</p>
+
+    <h2>4. Care groups and who you invite</h2>
+    <p>VeraCircle is built around a <strong>care group</strong>. Whoever creates the group invites the other people using a code.</p>
+    <p><strong>Inviting someone means giving them access to health information about the person receiving care.</strong> Before sharing an invitation code, be sure that person really should have that access.</p>
+    <p>About the groups:</p>
+    <ul>
+      <li>whoever creates the group manages who joins, who leaves and who can edit the care plan;</li>
+      <li>any member of the group sees the information recorded in it;</li>
+      <li>whoever leaves the group loses access immediately;</li>
+      <li>the invitation code can be changed at any time by whoever created the group — the old code stops working.</li>
+    </ul>
+    <p><strong>You are responsible for whom you invite.</strong> VeraCircle has no way of knowing whether the invited person should or should not have access.</p>
+
+    <h2>5. The person receiving care</h2>
+    <p>Often the information kept in the app belongs to <strong>another person</strong> — someone who may not have created the account and may not be able to consent on their own.</p>
+    <p>By recording information about the person receiving care, you declare that:</p>
+    <ul>
+      <li>you have standing to do so, as a family member, responsible person, legal representative or authorized professional;</li>
+      <li>you respect that person's will and dignity;</li>
+      <li>you share this information only with those who really need it.</li>
+    </ul>
+    <p>Treat another person's information the way you would want yours to be treated.</p>
+
+    <h3>When the person receiving care is under 18</h3>
+    <p>If the date of birth entered indicates that the person receiving care is <strong>under 18</strong>, the app asks for an explicit confirmation before saving: you declare that <strong>you are their legal guardian, or that you have authorization from the legal guardian</strong>, to record and share this care information with the people in this group.</p>
+    <p>From that confirmation, VeraCircle keeps <strong>only three things</strong>: which version of the text was shown, when the confirmation was made, and which account made it.</p>
+    <p>VeraCircle <strong>does not ask for and does not keep</strong> an identity document, proof of custody, guardianship, power of attorney or any other paperwork — and it <strong>does not verify</strong> the declared authority. Responsibility for what is declared lies with whoever declares it.</p>
+
+    <h2>6. The information you record</h2>
+    <p>You are responsible for what you write in the app.</p>
+    <p>VeraCircle <strong>does not check, does not validate, does not correct and does not complete</strong> what was typed. If a time was written down wrongly, the app will show the wrong time. If a medication name was typed wrongly, it will appear wrongly.</p>
+    <p>This applies especially to <strong>medications, doses, times, allergies, blood type and emergency contacts</strong>. Check what has been entered.</p>
+
+    <h2>7. Medications, reminders and the calendar are organization tools</h2>
+    <p>This section is also important.</p>
+    <p>VeraCircle's medication, reminder, calendar and stock features are <strong>organization tools</strong> — like a shared notebook. They do <strong>not</strong> guarantee that a medication will be taken, nor that it will be taken at the right time.</p>
+    <p>About the reminders specifically:</p>
+    <ul>
+      <li>they are <strong>local notifications on your iPhone</strong>, scheduled by the device itself;</li>
+      <li>they <strong>may fail, be delayed or not appear at all</strong> — for example if notifications are turned off, if Focus/Do Not Disturb is on, if the device is switched off or out of battery, or because of any operating system limitation;</li>
+      <li>the app <strong>does not know</strong> whether the reminder was seen, and has no way to guarantee delivery.</li>
+    </ul>
+    <div class="destaque">
+      <p><strong>Do not rely on the app alone for a critical medication.</strong> A reminder that does not arrive is a real possibility, and VeraCircle cannot take responsibility for that.</p>
+    </div>
+    <p>The stock control subtracts the quantity with each record made in the app. It reflects what was recorded — not what is physically in the box.</p>
+
+    <h2>8. Content shared inside the group</h2>
+    <p>The <strong>journal</strong>, the <strong>group conversation</strong> and the <strong>Rede de Apoio record</strong> (the support network) are seen by <strong>everyone in the care group</strong> — and by no one else.</p>
+    <p>VeraCircle <strong>has no public forum</strong> and no area open to people outside your care group. Nothing you write in the app is visible to anyone who is not in your group.</p>
+    <p>It is worth remembering that a care group is made of people: whatever is written there can be read by any of them — including by someone who joins later. Write with that in mind.</p>
+    <p>You remain the owner of what you write. By recording something in the app, you give us only the authorization needed to store and display that content inside the app, for you and for those who have legitimate access to it.</p>
+
+    <h2>9. Acceptable use</h2>
+    <p>By using VeraCircle, you agree <strong>not</strong> to:</p>
+    <ul>
+      <li>use the app for any illegal purpose;</li>
+      <li>access another person's account or group without authorization;</li>
+      <li>try to bypass the app's protections or access data belonging to other families;</li>
+      <li>post offensive, discriminatory or threatening content, or content that exposes third parties;</li>
+      <li>use the app to sell products, promise treatments or give medical guidance;</li>
+      <li>overload, automate or reverse-engineer the service.</li>
+    </ul>
+    <p>We may suspend or terminate accounts that violate these rules.</p>
+
+    <h2>10. Subscriptions and payments</h2>
+    <p><strong>Today VeraCircle charges nothing, and there is no active subscription.</strong> The section below describes how subscriptions will work if they come to exist.</p>
+    <p>When there are paid features:</p>
+    <ul>
+      <li>subscriptions will be sold and charged <strong>by Apple</strong>, through your App Store account — VeraCircle neither receives nor stores your card details;</li>
+      <li>the price, the duration and what is included in each plan will be shown inside the app <strong>before</strong> the purchase is confirmed;</li>
+      <li><strong>renewal, cancellation and refunds</strong> follow Apple's rules and are managed by you in Settings &gt; Apple ID &gt; Subscriptions, on your iPhone;</li>
+      <li>canceling a subscription stops future charges; paid access continues until the end of the period already paid for.</li>
+    </ul>
+    <p><strong>We do not promise here any price, free period or refund policy</strong> that is not already configured in the App Store.</p>
+
+    <h2>11. Availability and changes to the service</h2>
+    <p>We do what we can to keep VeraCircle running, but <strong>we do not guarantee that it will be available at all times</strong>. There may be interruptions due to maintenance, internet failures, problems in third-party services (such as the Google Firebase infrastructure) or reasons beyond our control.</p>
+    <p>We may change, add or remove features over time. If a change is significant and affects what you already use, we will let you know inside the app.</p>
+
+    <h2>12. Closing your account</h2>
+    <p>You can delete your account at any time, inside the app, in Settings.</p>
+    <p>What happens when you delete it:</p>
+    <ul>
+      <li>if you are the <strong>only person</strong> in the care group, all of the group's content is deleted along with it;</li>
+      <li>if there are <strong>other people</strong> in the group, the data is theirs too: you leave the group and your account is deleted, but the group continues;</li>
+      <li>deletion is <strong>permanent</strong> and cannot be undone.</li>
+    </ul>
+    <p>The details of which information is deleted are in the <a href="privacidade.html?lang=en" data-pagina="privacidade.html">Privacy Policy</a>.</p>
+
+    <h2>13. Intellectual property</h2>
+    <p>The VeraCircle name, the brand, the design of the app, the educational texts and the software are ours. You receive only the right to use the app, personally and non-exclusively, for as long as you respect these Terms.</p>
+    <p>What <strong>you</strong> write remains yours, as described in section 8.</p>
+
+    <h2>14. Limitation of liability</h2>
+    <p>VeraCircle is offered <strong>as is</strong>. We do our best, with real care, but we cannot promise that it will be perfect, uninterrupted or free of errors.</p>
+    <p>To the extent permitted by law, <strong>we are not responsible</strong> for:</p>
+    <ul>
+      <li>health decisions made on the basis of what is recorded in the app;</li>
+      <li>reminders that did not arrive, were delayed or were ignored;</li>
+      <li>incorrect, incomplete or outdated information recorded by users;</li>
+      <li>what other people in your care group do with the information;</li>
+      <li>unavailability of the service or of third-party services.</li>
+    </ul>
+    <p><strong>Nothing in these Terms removes the rights the law guarantees you as a consumer</strong>, including those of the Brazilian Consumer Protection Code (Código de Defesa do Consumidor).</p>
+
+    <h2>15. Privacy</h2>
+    <p>How your information is handled is described in the <a href="privacidade.html?lang=en" data-pagina="privacidade.html">Privacy Policy</a>, which is part of these Terms.</p>
+    <p>It explains what is kept, why, who can see it, where it is stored and how to delete everything.</p>
+
+    <h2>16. Changes to these Terms</h2>
+    <p>If these Terms change, we will publish the new version with a new date at the top. If the change is significant, we will let you know inside the app and ask you to accept the new version.</p>
+    <p>The app keeps <strong>which version you accepted and when</strong> — only that, with no other trace.</p>
+
+    <h2>17. Governing law and jurisdiction</h2>
+    <p>These Terms are governed by <strong>Brazilian law</strong>.</p>
+    <p>If there is a dispute, it will be resolved in the courts of your place of domicile, as guaranteed by the Brazilian Consumer Protection Code.</p>
+
+    <h2>18. Contact us</h2>
+    <p>VeraCircle is offered by <strong>Vanessa Vieira Guimarães</strong>.</p>
+    <p>Questions about these Terms, about your account or about your information:</p>
+    <p><a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
+    <p>A person reads them.</p>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Terms of Use · Version 2026-08-30</p>
+    <p>Responsible: Vanessa Vieira Guimarães · <a href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
+    <p><a href="privacidade.html?lang=en" data-pagina="privacidade.html">Privacy Policy</a></p>
+    <p class="assinatura"><span class="assinatura-marca">VeraCircle</span><br>
+       <span class="assinatura-frase">Care that brings people closer.</span></p>
+  </footer>
+
+</div>
+
+</div>
+<!-- end of the English block -->
+
+<script>
+/* ------------------------------------------------------------------
+   Seletor de idioma. Só troca visibilidade.
+   Sem análise, sem cookie, sem armazenamento, sem requisição de rede.
+   Sem JavaScript, o bloco em português continua visível.
+   ------------------------------------------------------------------ */
+(function () {
+  var raiz = document.documentElement;
+  var blocoPt = document.getElementById('pt');
+  var blocoEn = document.getElementById('en');
+  if (!blocoPt || !blocoEn) { return; }
+
+  var titulos = {
+    pt: 'Termos de Uso — VeraCircle',
+    en: 'Terms of Use — VeraCircle'
+  };
+
+  function idiomaDaUrl() {
+    var achado = /[?&]lang=(pt|en)(?:&|$)/.exec(window.location.search);
+    return achado ? achado[1] : 'pt';
+  }
+
+  function aplicar(idioma) {
+    if (idioma !== 'en') { idioma = 'pt'; }
+    blocoPt.hidden = (idioma !== 'pt');
+    blocoEn.hidden = (idioma !== 'en');
+    raiz.setAttribute('lang', idioma === 'en' ? 'en' : 'pt-BR');
+    document.title = titulos[idioma];
+    var sufixo = (idioma === 'en') ? '?lang=en' : '';
+    var pontes = document.querySelectorAll('a[data-pagina]');
+    for (var i = 0; i < pontes.length; i++) {
+      pontes[i].setAttribute('href', pontes[i].getAttribute('data-pagina') + sufixo);
+    }
+    return idioma;
+  }
+
+  document.addEventListener('click', function (evento) {
+    if (evento.defaultPrevented) { return; }
+    if (evento.metaKey || evento.ctrlKey || evento.shiftKey || evento.altKey) { return; }
+    var alvo = (evento.target && evento.target.closest)
+      ? evento.target.closest('a[data-idioma]')
+      : null;
+    if (!alvo) { return; }
+    evento.preventDefault();
+    var idioma = aplicar(alvo.getAttribute('data-idioma'));
+    try {
+      window.history.replaceState(
+        null, '',
+        idioma === 'en' ? '?lang=en' : window.location.pathname
+      );
+    } catch (erro) { /* endereco nao pode ser reescrito; a pagina ja esta no idioma certo */ }
+    var foco = document.querySelector('#' + idioma + ' a[data-idioma="' + idioma + '"]');
+    if (foco && foco.focus) { foco.focus(); }
+  });
+
+  aplicar(idiomaDaUrl());
+})();
+</script>
+
+</body>
+</html>
