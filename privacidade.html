@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -295,8 +294,8 @@
 
     <p class="marca">VeraCircle</p>
     <h1>Política de Privacidade</h1>
-    <p class="versao">Versão 2026-09-13</p>
-    <p class="versao">Última atualização: 13 de setembro de 2026</p>
+    <p class="versao">Versão 2026-09-22</p>
+    <p class="versao">Última atualização: 22 de setembro de 2026</p>
 
     <div class="responsavel">
       <p><span class="rotulo">Responsável pelo VeraCircle (controlador dos dados)</span>
@@ -371,7 +370,7 @@
     <ul>
       <li>Esse aviso pode aparecer na <strong>tela de bloqueio</strong> do iPhone. Quem decide se notificações aparecem com o aparelho bloqueado — e se o conteúdo delas fica visível ou escondido — são os <strong>seus ajustes do iOS</strong>, em Ajustes &gt; Notificações. O VeraCircle respeita o que estiver configurado ali.</li>
       <li>Se você usa um <strong>Apple Watch</strong>, o iOS pode espelhar esse aviso no relógio, conforme o que estiver configurado nos ajustes de notificação do seu aparelho. O VeraCircle <strong>não tem aplicativo próprio para Apple Watch</strong>: o que aparece ali é o espelhamento do aviso do iPhone, feito pelo próprio iOS.</li>
-      <li>Esses lembretes são <strong>locais</strong>: eles são agendados no próprio iPhone. O VeraCircle <strong>não</strong> tem servidor de notificação, <strong>não</strong> guarda identificador de aparelho e <strong>não</strong> envia nada pela internet para lembrar você.</li>
+      <li>Os lembretes de remédio e de agenda são <strong>locais</strong>: são agendados no próprio iPhone e funcionam mesmo sem internet. Nada sai do seu aparelho para que eles apareçam.</li>
     </ul>
     <p>Se preferir que o nome do remédio não apareça, você pode desligar os lembretes dentro do app, ou esconder o conteúdo das notificações nos ajustes do iPhone.</p>
 
@@ -393,11 +392,25 @@
     <p>Esses três campos ficam junto do <strong>perfil da pessoa cuidada</strong>, dentro do grupo de cuidado, e são vistos pelos membros do grupo como o resto do perfil.</p>
     <p><strong>O que o VeraCircle NÃO faz aqui:</strong> não pede documento de identidade, não pede comprovante de guarda, tutela ou procuração, não guarda foto nem assinatura, e <strong>não verifica</strong> a autoridade declarada. Não guarda endereço IP, identificador de aparelho, localização nem cópia do texto da declaração.</p>
 
+    <h3>4.2.3 Os avisos que chegam pela internet</h3>
+    <p>Além dos lembretes locais, o VeraCircle envia <strong>avisos pela internet</strong> quando acontece alguma coisa no seu grupo de cuidado: alguém escreve na conversa ou no diário, alguém confirma um remédio, um remédio importante fica sem confirmação, ou uma tarefa de cuidado fica em atraso.</p>
+    <p>Para conseguir entregar esses avisos, guardamos junto da sua conta um registro de cada aparelho em que você usa o aplicativo:</p>
+    <ul>
+      <li><strong>um código de instalação criado pelo próprio aplicativo</strong> — um número aleatório gerado por nós. Não é o número de série do seu iPhone, não é identificador de publicidade e não diz nada sobre você;</li>
+      <li><strong>o endereço de entrega do aviso</strong>, fornecido pelo sistema do aparelho;</li>
+      <li>se é iPhone ou Android, o idioma escolhido e a data do último uso.</li>
+    </ul>
+    <p><strong>O que vai escrito no aviso:</strong> o primeiro nome de quem fez a ação e o tipo de ação — por exemplo “enviou uma mensagem”, “escreveu no diário”, “confirmou um remédio”. Quando ninguém em particular agiu, o aviso é genérico, como “uma medicação importante ainda não foi confirmada” ou “há uma tarefa de cuidado em atraso”.</p>
+    <p><strong>O que nunca vai no aviso:</strong> o texto da mensagem, o texto do diário, o nome do remédio, a dose, o título do compromisso, condições de saúde, nem o nome da pessoa cuidada.</p>
+    <p>A entrega é feita pelo serviço de notificações do <strong>Expo</strong> e pela <strong>Apple</strong>. Para isso, o endereço de entrega e o texto curto do aviso passam por eles.</p>
+    <p>O registro de um aparelho é apagado quando você apaga a sua conta, quando sai da conta naquele aparelho, e também automaticamente quando o aplicativo não é aberto ali <strong>há 60 dias</strong>.</p>
+
     <h3>4.3 O que o aplicativo NÃO coleta</h3>
     <ul>
       <li><strong>Não</strong> coletamos sua localização.</li>
       <li><strong>Não</strong> usamos rastreadores de publicidade.</li>
-      <li><strong>Não</strong> temos ferramentas de análise de comportamento.</li>
+      <li><strong>Não</strong> temos ferramentas de análise de comportamento dentro do aplicativo: nada do que você faz nas telas é registrado para estudo, e nada alimenta perfil nenhum.</li>
+      <li><strong>Este site</strong> — as páginas legais e as demais páginas do VeraCircle — usa o <strong>Cloudflare Web Analytics</strong> para uma contagem de visitas. Ele <strong>não usa cookies</strong>, não guarda nada no seu navegador e não cria identificador para acompanhar quem visita. O que vemos são <strong>números agregados</strong>: quantas pessoas abriram cada página e de que país. A Cloudflare recebe o endereço de IP de cada visita porque é ela quem serve o site, como faz qualquer servidor de internet. Essa contagem existe apenas no site e <strong>não existe dentro do aplicativo</strong>.</li>
       <li><strong>Não</strong> acessamos seus contatos, sua agenda, suas fotos ou seu microfone.</li>
       <li><strong>Não</strong> vendemos e <strong>não</strong> compartilhamos suas informações com terceiros para fins comerciais. Nunca.</li>
     </ul>
@@ -416,8 +429,31 @@
     <p><strong>Apagar a sua conta do VeraCircle não cancela a assinatura.</strong> A assinatura pertence à sua conta do App Store, não a nós: ela continua a renovar até que você a cancele na Apple, em <strong>Ajustes &gt; Apple ID &gt; Assinaturas</strong>. Cancele lá, antes ou depois de apagar a conta, como preferir.</p>
     <p>O registro de assinatura mantido pelo RevenueCat, ligado ao identificador interno da conta, <strong>não é apagado automaticamente</strong> quando você apaga a conta no aplicativo. Se quiser solicitar a exclusão dos dados associados à sua conta mantidos pelos nossos prestadores, escreva para <a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a>. Analisaremos o pedido nos termos da legislação aplicável.</p>
 
+    <h3>4.5 O estado da sua conta e os registros técnicos</h3>
+    <p>Para que a assinatura e os limites do plano funcionem, guardamos junto da sua conta um conjunto pequeno de informações <strong>sobre a conta</strong>, e não sobre o cuidado:</p>
+    <ul>
+      <li>qual é o seu plano hoje e qual era antes;</li>
+      <li>se a sua conta está acima do que o plano atual comporta;</li>
+      <li>quando termina o prazo para escolher quem continua ativo, quando esse prazo existe;</li>
+      <li>em quais grupos o seu acesso está inativo no momento, e desde quando;</li>
+      <li>a data da última atualização desse estado.</li>
+    </ul>
+    <p>São <strong>códigos internos e datas</strong>. Nunca nome, condição de saúde, remédio, endereço ou conteúdo do cuidado. Tudo isso é apagado junto com a sua conta.</p>
+    <p><strong>Registros técnicos.</strong> Os nossos servidores gravam registros de funcionamento quando: o plano de uma conta muda; um limite do plano é atingido; um prazo para escolher começa, continua ou termina; um acesso fica inativo ou volta; um pedido é recusado por falta de permissão ou por vir malformado; um aviso deixa de ser enviado porque o grupo está inativo; e quando alguma operação falha.</p>
+    <p><strong>O que entra nesses registros:</strong> o identificador interno da conta, o identificador interno do grupo, datas, o plano anterior e o novo, contagens e códigos de erro.</p>
+    <p><strong>O que nunca entra:</strong> nome de remédio, texto do diário, mensagem da conversa, nome da pessoa cuidada, condição de saúde, endereço ou e-mail.</p>
+    <p><strong>Os registros técnicos de funcionamento ficam guardados por 30 dias e depois são apagados automaticamente.</strong></p>
+
     <h2>5. Para que usamos essas informações</h2>
-    <p>Para uma coisa só: <strong>fazer o aplicativo funcionar para o seu grupo de cuidado.</strong></p>
+    <p><strong>O conteúdo do cuidado</strong> — diário, remédios, agenda, perfil da pessoa cuidada, rede de apoio e conversa — serve para uma coisa só: <strong>fazer o aplicativo funcionar para o seu grupo de cuidado</strong>.</p>
+    <p>Além disso, guardamos um conjunto pequeno de informações <strong>sobre a conta</strong>, e não sobre o cuidado, para:</p>
+    <ul>
+      <li>manter a assinatura funcionando e liberar os recursos do plano que você contratou;</li>
+      <li>aplicar os limites do plano — quantas pessoas cuidadas e quantas pessoas convidadas ficam ativas;</li>
+      <li>devolver o acesso quando a conta volta a comportá-lo;</li>
+      <li>manter a segurança e a integridade das contas;</li>
+      <li>encontrar e corrigir falhas, e entender por que alguma coisa não funcionou.</li>
+    </ul>
     <p>Sem venda de dados, sem publicidade, sem perfilamento, sem treinamento de inteligência artificial com o conteúdo das famílias.</p>
 
     <h2>6. Quem consegue ver</h2>
@@ -445,10 +481,15 @@
     <h3>Quem entra no grupo</h3>
     <p>Só entra quem recebe o código de convite de quem criou o grupo. Esse código tem prazo de validade e pode ser trocado a qualquer momento. Quando alguém é removido do grupo, o código é trocado automaticamente e essa pessoa perde o acesso na mesma hora.</p>
 
+    <h3>Acesso inativo não é remoção</h3>
+    <p>Se o plano de quem criou o grupo passar a comportar menos pessoas, o acesso de alguns membros — ou de um grupo inteiro — pode ficar <strong>temporariamente inativo</strong>. Quem fica inativo continua ligado ao grupo e <strong>nada do que já foi registrado é apagado</strong>: o acesso volta se o plano voltar a comportá-lo. Isso é diferente de ser removido do grupo, que é definitivo e troca o código de convite.</p>
+
     <h2>7. Onde as informações ficam guardadas</h2>
     <p>Usamos o <strong>Google Firebase</strong> (Google LLC) como infraestrutura: autenticação e banco de dados. O armazenamento de arquivos do Firebase <strong>não é usado</strong> — o aplicativo não envia nem guarda fotos ou anexos. Os servidores ficam fora do Brasil e de Portugal, o que significa que há transferência internacional de dados — autorizada por você ao usar o aplicativo.</p>
     <p>O Google atua como operador dos dados, seguindo nossas instruções. Política de privacidade do Google: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
-    <p>Também usamos o <strong>Expo</strong> (650 Industries, Inc.) para construir e distribuir o aplicativo. O Expo não recebe o conteúdo dos seus dados de cuidado.</p>
+    <p>Também usamos o <strong>Expo</strong> (650 Industries, Inc.) para construir e distribuir o aplicativo <strong>e para entregar os avisos que chegam pela internet</strong>. Para entregar um aviso, o Expo recebe o endereço de entrega daquele aparelho e o texto curto do aviso, descrito na seção 4.2.3. O Expo <strong>não</strong> recebe o conteúdo dos seus dados de cuidado.</p>
+    <p>A <strong>Apple</strong> trata da venda e da cobrança das assinaturas e da entrega final das notificações ao seu iPhone, segundo as políticas dela.</p>
+    <p>Estas páginas e o site do VeraCircle são servidos pela <strong>Cloudflare</strong>, que também faz a contagem de visitas descrita na seção 4.3. A Cloudflare não tem acesso aos dados de cuidado, que ficam no Firebase.</p>
     <p>Para as assinaturas usamos o <strong>RevenueCat</strong> (RevenueCat, Inc., Estados Unidos), que confere junto à Apple se a assinatura está ativa. Ele recebe o identificador da conta e os dados da compra, descritos na seção 4.4 — nunca o conteúdo de cuidado. Política de privacidade: <a href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a></p>
 
     <h2>8. Segurança</h2>
@@ -467,6 +508,22 @@
       <li>se você era a <strong>única pessoa</strong> do grupo, todo o conteúdo do grupo é apagado junto — diário, remédios, agenda, rede de apoio e perfil;</li>
       <li>se havia <strong>outras pessoas</strong> no grupo, você sai do grupo e o conteúdo permanece com elas, porque também é delas.</li>
     </ul>
+
+    <p>Prazos diferentes para coisas diferentes:</p>
+    <div class="rolagem">
+      <table>
+        <thead>
+          <tr><th scope="col">O que</th><th scope="col">Por quanto tempo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A sua conta e o conteúdo do cuidado</td><td>enquanto a conta existir</td></tr>
+          <tr><td>O estado da conta descrito na seção 4.5</td><td>enquanto a conta existir — apagado junto com ela</td></tr>
+          <tr><td>O registro de cada aparelho</td><td>até apagar a conta ou sair da conta nele, ou 60 dias sem abrir o aplicativo naquele aparelho</td></tr>
+          <tr><td>Registros técnicos de funcionamento</td><td><strong>30 dias</strong></td></tr>
+          <tr><td>O registro da assinatura no RevenueCat</td><td>não é apagado automaticamente com a conta — ver seção 4.4</td></tr>
+        </tbody>
+      </table>
+    </div>
 
     <h2>10. Seus direitos</h2>
     <p>Pela LGPD (Brasil), pelo RGPD (Europa) e por leis equivalentes, você pode:</p>
@@ -495,7 +552,7 @@
   </main>
 
   <footer class="rodape">
-    <p>Política de Privacidade · Versão 2026-09-13</p>
+    <p>Política de Privacidade · Versão 2026-09-22</p>
     <p>Responsável: Vanessa Vieira Guimarães · <a href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
     <p><a href="termos.html" data-pagina="termos.html">Termos de Uso</a></p>
     <p class="assinatura"><span class="assinatura-marca">VeraCircle</span><br>
@@ -508,7 +565,7 @@
 <!-- fim do bloco em português -->
 
 <!-- ================================================================
-     ENGLISH — same legal version 2026-09-13. Hidden until chosen.
+     ENGLISH — same legal version 2026-09-22. Hidden until chosen.
      ================================================================ -->
 <div id="en" lang="en" hidden>
 
@@ -526,8 +583,8 @@
 
     <p class="marca">VeraCircle</p>
     <h1>Privacy Policy</h1>
-    <p class="versao">Version 2026-09-13</p>
-    <p class="versao">Last updated: September 13, 2026</p>
+    <p class="versao">Version 2026-09-22</p>
+    <p class="versao">Last updated: September 22, 2026</p>
 
     <div class="responsavel">
       <p><span class="rotulo">Responsible for VeraCircle (data controller)</span>
@@ -602,7 +659,7 @@
     <ul>
       <li>This alert may appear on the iPhone's <strong>lock screen</strong>. Whether notifications appear while the device is locked — and whether their content is visible or hidden — is decided by <strong>your iOS settings</strong>, in Settings &gt; Notifications. VeraCircle respects whatever is configured there.</li>
       <li>If you use an <strong>Apple Watch</strong>, iOS may mirror this alert on the watch, according to what is configured in your device's notification settings. VeraCircle <strong>has no app of its own for Apple Watch</strong>: what appears there is iOS mirroring the iPhone alert.</li>
-      <li>These reminders are <strong>local</strong>: they are scheduled on the iPhone itself. VeraCircle has <strong>no</strong> notification server, does <strong>not</strong> keep a device identifier and does <strong>not</strong> send anything over the internet to remind you.</li>
+      <li>Medication and calendar reminders are <strong>local</strong>: they are scheduled on the iPhone itself and work even without internet. Nothing leaves your device for them to appear.</li>
     </ul>
     <p>If you prefer the medication name not to appear, you can turn the reminders off inside the app, or hide notification content in your iPhone settings.</p>
 
@@ -624,11 +681,25 @@
     <p>These three fields sit alongside the <strong>profile of the person receiving care</strong>, inside the care group, and are seen by the group's members like the rest of the profile.</p>
     <p><strong>What VeraCircle does NOT do here:</strong> it does not ask for an identity document, does not ask for proof of custody, guardianship or power of attorney, does not keep a photo or a signature, and <strong>does not verify</strong> the declared authority. It does not keep an IP address, a device identifier, location or a copy of the text of the declaration.</p>
 
+    <h3>4.2.3 The alerts that arrive over the internet</h3>
+    <p>Besides the local reminders, VeraCircle sends <strong>alerts over the internet</strong> when something happens in your care group: someone writes in the conversation or the journal, someone confirms a medication, an important medication goes unconfirmed, or a care task falls overdue.</p>
+    <p>To be able to deliver those alerts, we keep alongside your account a record of each device on which you use the app:</p>
+    <ul>
+      <li><strong>an installation code created by the app itself</strong> — a random number we generate. It is not your iPhone's serial number, it is not an advertising identifier and it says nothing about you;</li>
+      <li><strong>the delivery address for the alert</strong>, provided by the device's operating system;</li>
+      <li>whether it is an iPhone or an Android, the chosen language and the date of last use.</li>
+    </ul>
+    <p><strong>What the alert says:</strong> the first name of whoever took the action and the kind of action — for example “sent a message”, “wrote in the journal”, “confirmed a medication”. When no one in particular acted, the alert is generic, such as “an important medication has not been confirmed yet” or “there is an overdue care task”.</p>
+    <p><strong>What never goes into the alert:</strong> the text of the message, the text of the journal, the name of the medication, the dose, the title of the appointment, health conditions, or the name of the person receiving care.</p>
+    <p>Delivery is handled by the <strong>Expo</strong> notification service and by <strong>Apple</strong>. For that, the delivery address and the short text of the alert pass through them.</p>
+    <p>A device's record is deleted when you delete your account, when you sign out on that device, and also automatically when the app has not been opened there <strong>for 60 days</strong>.</p>
+
     <h3>4.3 What the app does NOT collect</h3>
     <ul>
       <li>We do <strong>not</strong> collect your location.</li>
       <li>We do <strong>not</strong> use advertising trackers.</li>
-      <li>We do <strong>not</strong> have behavior analytics tools.</li>
+      <li>We do <strong>not</strong> have behavior analytics tools inside the app: nothing you do on its screens is recorded for study, and nothing feeds any profile.</li>
+      <li><strong>This website</strong> — the legal pages and the other VeraCircle pages — uses <strong>Cloudflare Web Analytics</strong> to count visits. It <strong>does not use cookies</strong>, stores nothing in your browser and creates no identifier to follow who visits. What we see are <strong>aggregate numbers</strong>: how many people opened each page and from which country. Cloudflare receives the IP address of each visit because it is Cloudflare that serves the site, as any internet server does. This counting exists only on the website and <strong>does not exist inside the app</strong>.</li>
       <li>We do <strong>not</strong> access your contacts, your calendar, your photos or your microphone.</li>
       <li>We do <strong>not</strong> sell and do <strong>not</strong> share your information with third parties for commercial purposes. Ever.</li>
     </ul>
@@ -647,8 +718,31 @@
     <p><strong>Deleting your VeraCircle account does not cancel the subscription.</strong> The subscription belongs to your App Store account, not to us: it keeps renewing until you cancel it with Apple, in <strong>Settings &gt; Apple ID &gt; Subscriptions</strong>. Cancel it there, before or after deleting the account, whichever you prefer.</p>
     <p>The subscription record held by RevenueCat, linked to your account&#39;s internal identifier, <strong>is not deleted automatically</strong> when you delete your account in the app. If you want to request deletion of data associated with your account that is held by our service providers, write to <a class="email" href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a>. We will handle the request in accordance with applicable law.</p>
 
+    <h3>4.5 Your account's state and the technical records</h3>
+    <p>So that the subscription and the plan limits work, we keep alongside your account a small set of information <strong>about the account</strong>, not about the care:</p>
+    <ul>
+      <li>which plan you are on today and which one you were on before;</li>
+      <li>whether your account is above what the current plan allows;</li>
+      <li>when the period to choose who stays active ends, when such a period exists;</li>
+      <li>in which groups your access is inactive at the moment, and since when;</li>
+      <li>the date this state was last updated.</li>
+    </ul>
+    <p>These are <strong>internal codes and dates</strong>. Never a name, a health condition, a medication, an address or care content. All of it is deleted together with your account.</p>
+    <p><strong>Technical records.</strong> Our servers write operational records when: an account's plan changes; a plan limit is reached; a period to choose begins, continues or ends; access becomes inactive or comes back; a request is refused for lack of permission or because it was malformed; an alert is not sent because the group is inactive; and when an operation fails.</p>
+    <p><strong>What goes into those records:</strong> the account's internal identifier, the group's internal identifier, dates, the previous and the new plan, counts and error codes.</p>
+    <p><strong>What never goes in:</strong> a medication name, journal text, a conversation message, the name of the person receiving care, a health condition, an address or an email address.</p>
+    <p><strong>Technical operational records are kept for 30 days and are then deleted automatically.</strong></p>
+
     <h2>5. What we use this information for</h2>
-    <p>For one thing only: <strong>to make the app work for your care group.</strong></p>
+    <p><strong>Care content</strong> — journal, medications, calendar, the profile of the person receiving care, support network and conversation — serves one thing only: <strong>to make the app work for your care group</strong>.</p>
+    <p>Beyond that, we keep a small set of information <strong>about the account</strong>, not about the care, in order to:</p>
+    <ul>
+      <li>keep the subscription working and unlock the features of the plan you subscribed to;</li>
+      <li>apply the plan limits — how many people receiving care and how many invited people stay active;</li>
+      <li>give access back when the account can hold it again;</li>
+      <li>keep accounts secure and consistent;</li>
+      <li>find and fix faults, and understand why something did not work.</li>
+    </ul>
     <p>No data selling, no advertising, no profiling, no artificial intelligence training with families' content.</p>
 
     <h2>6. Who can see it</h2>
@@ -676,10 +770,15 @@
     <h3>Who joins the group</h3>
     <p>Only someone who receives the invitation code from whoever created the group. That code has an expiry date and can be changed at any time. When someone is removed from the group, the code is changed automatically and that person loses access at the same moment.</p>
 
+    <h3>Inactive access is not removal</h3>
+    <p>If the plan of whoever created the group comes to allow fewer people, the access of some members — or of a whole group — may become <strong>temporarily inactive</strong>. Whoever becomes inactive stays linked to the group and <strong>nothing already recorded is deleted</strong>: access returns if the plan can hold it again. That is different from being removed from the group, which is permanent and changes the invitation code.</p>
+
     <h2>7. Where the information is stored</h2>
     <p>We use <strong>Google Firebase</strong> (Google LLC) as infrastructure: authentication and database. Firebase file storage <strong>is not used</strong> — the app does not send or keep photos or attachments. The servers are outside Brazil and Portugal, which means there is an international transfer of data — authorized by you when you use the app.</p>
     <p>Google acts as the data processor, following our instructions. Google's privacy policy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
-    <p>We also use <strong>Expo</strong> (650 Industries, Inc.) to build and distribute the app. Expo does not receive the content of your care data.</p>
+    <p>We also use <strong>Expo</strong> (650 Industries, Inc.) to build and distribute the app <strong>and to deliver the alerts that arrive over the internet</strong>. To deliver an alert, Expo receives that device’s delivery address and the short text of the alert, described in section 4.2.3. Expo does <strong>not</strong> receive the content of your care data.</p>
+    <p><strong>Apple</strong> handles the sale and billing of subscriptions and the final delivery of notifications to your iPhone, under its own policies.</p>
+    <p>These pages and the VeraCircle website are served by <strong>Cloudflare</strong>, which also does the visit counting described in section 4.3. Cloudflare has no access to the care data, which stays in Firebase.</p>
     <p>For subscriptions we use <strong>RevenueCat</strong> (RevenueCat, Inc., United States), which checks with Apple whether the subscription is active. It receives the account identifier and the purchase data described in section 4.4 — never the care content. Privacy policy: <a href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a></p>
 
     <h2>8. Security</h2>
@@ -698,6 +797,22 @@
       <li>if you were the <strong>only person</strong> in the group, all of the group's content is deleted with it — journal, medications, calendar, support network and profile;</li>
       <li>if there were <strong>other people</strong> in the group, you leave the group and the content stays with them, because it is theirs too.</li>
     </ul>
+
+    <p>Different things are kept for different lengths of time:</p>
+    <div class="rolagem">
+      <table>
+        <thead>
+          <tr><th scope="col">What</th><th scope="col">For how long</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Your account and the care content</td><td>for as long as the account exists</td></tr>
+          <tr><td>The account state described in section 4.5</td><td>for as long as the account exists — deleted together with it</td></tr>
+          <tr><td>Each device’s record</td><td>until you delete the account or sign out on it, or 60 days without opening the app on that device</td></tr>
+          <tr><td>Technical operational records</td><td><strong>30 days</strong></td></tr>
+          <tr><td>The subscription record at RevenueCat</td><td>not deleted automatically with the account — see section 4.4</td></tr>
+        </tbody>
+      </table>
+    </div>
 
     <h2>10. Your rights</h2>
     <p>Under the LGPD (Brazil), the GDPR (Europe) and equivalent laws, you can:</p>
@@ -726,7 +841,7 @@
   </main>
 
   <footer class="rodape">
-    <p>Privacy Policy · Version 2026-09-13</p>
+    <p>Privacy Policy · Version 2026-09-22</p>
     <p>Responsible: Vanessa Vieira Guimarães · <a href="mailto:veracircle.app@gmail.com">veracircle.app@gmail.com</a></p>
     <p><a href="termos.html?lang=en" data-pagina="termos.html">Terms of Use</a></p>
     <p class="assinatura"><span class="assinatura-marca">VeraCircle</span><br>
